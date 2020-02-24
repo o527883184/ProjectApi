@@ -1,0 +1,105 @@
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using ProjectApi.Helpers;
+using ProjectApi.Models;
+
+namespace ProjectApi.Controllers
+{
+    /// <summary>
+    /// 通用基类
+    /// </summary>
+    public class BaseController : ControllerBase
+    {
+        /// <summary>
+        /// 返回分页相关信息
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="urlHelper"></param>
+        /// <param name="parameters"></param>
+        /// <param name="routeName"></param>
+        /// <param name="paginatedList"></param>
+        protected void CreateMeta<T>(IUrlHelper urlHelper, PaginationParameters parameters, string routeName, PaginatedList<T> paginatedList) where T : class
+        {
+            var meta = new
+            {
+                paginatedList.TotalCount,
+                paginatedList.PageCount,
+                paginatedList.PaginationBase.PageIndex,
+                paginatedList.PaginationBase.PageSize,
+                PrePageLink = paginatedList.HasPre ? CreateUri(urlHelper, parameters, PaginationUriType.PrePage, routeName) : null,
+                NextPageLink = paginatedList.HasNext ? CreateUri(urlHelper, parameters, PaginationUriType.NextPage, routeName) : null
+            };
+
+            Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(meta, new JsonSerializerSettings
+            {
+                ContractResolver = new CamelCasePropertyNamesContractResolver() // 驼峰命名
+            }));
+        }
+
+        /// <summary>
+        /// 生成分页前后页URI
+        /// </summary>
+        /// <param name="urlHelper"></param>
+        /// <param name="parameters"></param>
+        /// <param name="type"></param>
+        /// <param name="routeName"></param>
+        /// <returns></returns>
+        private string CreateUri(IUrlHelper urlHelper, PaginationBase parameters, PaginationUriType type, string routeName)
+        {
+            switch (type)
+            {
+                case PaginationUriType.PrePage:
+                    var preParameters = new PaginationBase
+                    {
+                        PageIndex = parameters.PageIndex--,
+                        PageSize = parameters.PageSize,
+                        OrderBy = parameters.OrderBy,
+                        MaxPageSize = parameters.MaxPageSize
+                    };
+                    return urlHelper.Link(routeName, preParameters);
+
+                case PaginationUriType.NextPage:
+                    var nextParameters = new PaginationBase
+                    {
+                        PageIndex = parameters.PageIndex++,
+                        PageSize = parameters.PageSize,
+                        OrderBy = parameters.OrderBy,
+                        MaxPageSize = parameters.MaxPageSize
+                    };
+                    return urlHelper.Link(routeName, nextParameters);
+
+                default:
+                    return null;
+            }
+        }
+
+        /// <summary>
+        /// 自定义模型验证错误格式
+        /// </summary>
+        /// <param name="modelState"></param>
+        /// <returns></returns>
+        public override UnprocessableEntityObjectResult UnprocessableEntity([ActionResultObjectValue] ModelStateDictionary modelState)
+        {
+            if (modelState == null)
+                throw new ArgumentNullException(nameof(modelState));
+
+            return base.UnprocessableEntity(new ResourceValidationHelper(modelState));
+        }
+    }
+
+    public enum PaginationUriType
+    {
+        /// <summary>
+        /// 上一页
+        /// </summary>
+        PrePage,
+        /// <summary>
+        /// 下一页
+        /// </summary>
+        NextPage
+    }
+}

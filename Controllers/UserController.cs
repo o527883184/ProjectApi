@@ -9,7 +9,7 @@ namespace ProjectApi.Controllers
     [Route("api/user")]
     [Authorize]
     [ApiController]
-    public class UserController : ControllerBase
+    public class UserController : BaseController
     {
         private readonly IUserBll _userBll;
 

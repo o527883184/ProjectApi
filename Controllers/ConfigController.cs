@@ -9,7 +9,7 @@ namespace ProjectApi.Controllers
     [Route("api/config")]
     [Authorize]
     [ApiController]
-    public class ConfigController : ControllerBase
+    public class ConfigController : BaseController
     {
         private readonly IConfigRepository _configRepository;
 
