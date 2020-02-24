@@ -1,0 +1,46 @@
+2020-02-04 15:54:18.532 +08:00 [INF] User profile is available. Using 'C:\Users\Li\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-02-04 15:54:18.791 +08:00 [INF] Now listening on: https://localhost:5001
+2020-02-04 15:54:18.798 +08:00 [INF] Now listening on: http://localhost:5000
+2020-02-04 15:54:18.799 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-04 15:54:18.800 +08:00 [INF] Hosting environment: Development
+2020-02-04 15:54:18.802 +08:00 [INF] Content root path: C:\Users\Li\source\repos\ProjectApi
+2020-02-04 15:54:19.969 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
+2020-02-04 15:54:19.998 +08:00 [INF] Request finished in 32.4692ms 404 
+2020-02-04 15:54:34.948 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/weatherforecast  
+2020-02-04 15:54:34.960 +08:00 [INF] Request finished in 11.9788ms 307 
+2020-02-04 15:54:34.964 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
+2020-02-04 15:54:34.966 +08:00 [INF] Request finished in 1.9882ms 404 
+2020-02-04 15:54:42.734 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/weatherforecast  
+2020-02-04 15:54:42.735 +08:00 [INF] Request finished in 1.5562ms 307 
+2020-02-04 15:54:42.737 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5001/weatherforecast  
+2020-02-04 15:54:42.739 +08:00 [INF] Request finished in 1.1686ms 404 
+2020-02-04 15:55:38.125 +08:00 [INF] User profile is available. Using 'C:\Users\Li\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-02-04 15:55:38.391 +08:00 [INF] Now listening on: https://localhost:5002
+2020-02-04 15:55:38.399 +08:00 [INF] Now listening on: http://localhost:5001
+2020-02-04 15:55:38.400 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-04 15:55:38.401 +08:00 [INF] Hosting environment: Development
+2020-02-04 15:55:38.402 +08:00 [INF] Content root path: C:\Users\Li\source\repos\ProjectApi
+2020-02-04 15:55:38.967 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/weatherforecast  
+2020-02-04 15:55:38.995 +08:00 [INF] Request finished in 30.9929ms 404 
+2020-02-04 15:55:45.711 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/weatherforecast  
+2020-02-04 15:55:45.719 +08:00 [INF] Request finished in 8.205ms 307 
+2020-02-04 15:55:45.724 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/weatherforecast  
+2020-02-04 15:55:45.726 +08:00 [INF] Request finished in 2.2052ms 404 
+2020-02-04 15:57:40.385 +08:00 [INF] User profile is available. Using 'C:\Users\Li\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-02-04 15:57:40.671 +08:00 [INF] Now listening on: https://localhost:5002
+2020-02-04 15:57:40.673 +08:00 [INF] Now listening on: http://localhost:5001
+2020-02-04 15:57:40.675 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-04 15:57:40.676 +08:00 [INF] Hosting environment: Development
+2020-02-04 15:57:40.677 +08:00 [INF] Content root path: C:\Users\Li\source\repos\ProjectApi
+2020-02-04 15:57:41.886 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/weatherforecast  
+2020-02-04 15:57:41.923 +08:00 [INF] Request finished in 41.531ms 404 
+2020-02-04 15:59:49.017 +08:00 [INF] Application is shutting down...
+2020-02-04 17:25:34.548 +08:00 [INF] User profile is available. Using 'C:\Users\Li\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-02-04 17:25:34.808 +08:00 [INF] Now listening on: https://localhost:5002
+2020-02-04 17:25:34.814 +08:00 [INF] Now listening on: http://localhost:5001
+2020-02-04 17:25:34.815 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-04 17:25:34.817 +08:00 [INF] Hosting environment: Development
+2020-02-04 17:25:34.819 +08:00 [INF] Content root path: C:\Users\Li\source\repos\ProjectApi
+2020-02-04 17:25:35.972 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/weatherforecast  
+2020-02-04 17:25:35.987 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-04 17:25:36.016 +08:00 [INF] Request finished in 47.8903ms 404 
