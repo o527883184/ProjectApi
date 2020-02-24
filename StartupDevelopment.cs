@@ -34,7 +34,7 @@ namespace ProjectApi
                 .AddNewtonsoftJson(options =>
                 {
                     options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver(); // 序列化驼峰命名
-                })
+                })// .ConfigureApiBehaviorOptions()
                 .AddFluentValidation(); // 模型验证
 
             services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
