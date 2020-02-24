@@ -5,6 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="logs\**" />
+    <Compile Remove="Services\**" />
+    <Content Remove="logs\**" />
+    <Content Remove="Services\**" />
+    <EmbeddedResource Remove="logs\**" />
+    <EmbeddedResource Remove="Services\**" />
+    <None Remove="logs\**" />
+    <None Remove="Services\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove=".gitattributes" />
     <None Remove=".gitignore" />
   </ItemGroup>
@@ -12,13 +23,12 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="FluentValidation.AspNetCore" Version="8.6.1" />
-    <PackageReference Include="IdentityServer4" Version="3.1.0" />
+    <PackageReference Include="IdentityServer4" Version="3.1.2" />
     <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.1" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.2" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
-    <PackageReference Include="MongoDB.Driver" Version="2.10.1" />
-    <PackageReference Include="Ocelot" Version="14.0.3" />
+    <PackageReference Include="MongoDB.Driver" Version="2.10.2" />
     <PackageReference Include="Serilog.AspNetCore" Version="3.2.0" />
     <PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
     <PackageReference Include="Serilog.Sinks.File" Version="4.1.0" />
