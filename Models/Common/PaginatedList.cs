@@ -26,7 +26,7 @@ namespace ProjectApi.Models
         /// </summary>
         public bool HasNext => PaginationBase.PageNumber < PageCount;
 
-        public PaginatedList(int pageIndex, int pageSize, long totalCount, IEnumerable<T> data)
+        public PaginatedList(int pageIndex, int pageSize, long totalCount, List<T> data)
         {
             PaginationBase = new PaginationBase
             {

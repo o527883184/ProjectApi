@@ -89,39 +89,40 @@ namespace ProjectApi.DAL
             return await _col.Find(Builders<T>.Filter.Empty).ToListAsync();
         }
 
-        public Task<PaginatedList<List<T>>> SearchAsync(int pageIndex, int pageSize)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<PaginatedList<T>> SearchAsync(int pageIndex, int pageSize) => await SearchAsync(pageIndex, pageSize);
 
-        public Task<PaginatedList<List<T>>> SearchAsync(int pageIndex, int pageSize, string sortField, bool isAsc = true)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<PaginatedList<T>> SearchAsync(int pageIndex, int pageSize, string sortField, bool isAsc = true) => await SearchAsync(pageIndex, pageSize, sort: isAsc ? Builders<T>.Sort.Ascending(sortField) : Builders<T>.Sort.Descending(sortField));
 
-        public Task<PaginatedList<List<T>>> SearchAsync<TField>(int pageIndex, int pageSize, string field, TField value)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<PaginatedList<T>> SearchAsync<TField>(int pageIndex, int pageSize, string field, TField value) => await SearchAsync(pageIndex, pageSize, Builders<T>.Filter.Eq(field, value));
 
-        public Task<PaginatedList<List<T>>> SearchAsync<TField>(int pageIndex, int pageSize, string field, TField value, string sortField, bool isAsc = true)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<PaginatedList<T>> SearchAsync<TField>(int pageIndex, int pageSize, string field, TField value, string sortField, bool isAsc = true) => await SearchAsync(pageIndex, pageSize, Builders<T>.Filter.Eq(field, value), isAsc ? Builders<T>.Sort.Ascending(sortField) : Builders<T>.Sort.Descending(sortField));
 
-        public Task<PaginatedList<List<T>>> SearchAsync(int pageIndex, int pageSize, FilterDefinition<T> filter)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<PaginatedList<T>> SearchAsync(int pageIndex, int pageSize, FilterDefinition<T> filter) => await SearchAsync(pageIndex, pageSize, filter);
 
-        public Task<PaginatedList<List<T>>> SearchAsync<TField>(int pageIndex, int pageSize, FilterDefinition<T> filter, string sortField, bool isAsc = true)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task<PaginatedList<T>> SearchAsync<TField>(int pageIndex, int pageSize, FilterDefinition<T> filter, string sortField, bool isAsc = true) => await SearchAsync(pageIndex, pageSize, filter, isAsc ? Builders<T>.Sort.Ascending(sortField) : Builders<T>.Sort.Descending(sortField));
 
-        public Task<PaginatedList<List<T>>> SearchAsync(int pageIndex, int pageSize, FilterDefinition<T> filter, FilterDefinition<T> sort)
+        public async Task<PaginatedList<T>> SearchAsync(int pageIndex = 0, int pageSize = 20, FilterDefinition<T> filter = null, SortDefinition<T> sort = null)
         {
-            throw new NotImplementedException();
+            var data = new List<T>();
+            var total = 0L;
+
+            if (filter != null && sort != null)
+            {
+                data = await _col.Find(filter).Sort(sort).Skip(pageIndex).Limit(pageSize).ToListAsync();
+                total = await GetCountAsync(filter);
+            }
+            else if (filter != null)
+            {
+                data = await _col.Find(filter).Skip(pageIndex).Limit(pageSize).ToListAsync();
+                total = await GetCountAsync(filter);
+            }
+            else if (sort != null)
+            {
+                data = await _col.Find(filter).Sort(sort).Skip(pageIndex).Limit(pageSize).ToListAsync();
+                total = await GetCountAsync();
+            }
+
+            return new PaginatedList<T>(pageIndex, pageSize, total, data);
         }
 
         public Task<int> UpdateAsync(T entity)

@@ -151,10 +151,10 @@ namespace ProjectApi.Interfaces
         /// <summary>
         /// 查询数据集合
         /// </summary>
-        /// <param name="orderField">排序字段</param>
+        /// <param name="sortField">排序字段</param>
         /// <param name="isAsc">是否升序</param>
         /// <returns></returns>
-        Task<IEnumerable<T>> SearchAsync(string orderField, bool isAsc = true);
+        Task<IEnumerable<T>> SearchAsync(string sortField, bool isAsc = true);
 
         /// <summary>
         /// 查询数据集合
@@ -181,17 +181,17 @@ namespace ProjectApi.Interfaces
         /// <param name="pageIndex">页索引</param>
         /// <param name="pageSize">页大小</param>
         /// <returns></returns>
-        Task<PaginatedList<List<T>>> SearchAsync(int pageIndex, int pageSize);
+        Task<PaginatedList<T>> SearchAsync(int pageIndex, int pageSize);
 
         /// <summary>
         /// 查询分页数据集合
         /// </summary>
         /// <param name="pageIndex">页索引</param>
         /// <param name="pageSize">页大小</param>
-        /// <param name="orderField">排序字段</param>
+        /// <param name="sortField">排序字段</param>
         /// <param name="isAsc">是否升序</param>
         /// <returns></returns>
-        Task<PaginatedList<List<T>>> SearchAsync(int pageIndex, int pageSize, string orderField, bool isAsc = true);
+        Task<PaginatedList<T>> SearchAsync(int pageIndex, int pageSize, string sortField, bool isAsc = true);
 
         /// <summary>
         /// 查询分页数据集合
@@ -201,7 +201,7 @@ namespace ProjectApi.Interfaces
         /// <param name="field">字段名</param>
         /// <param name="value">字段值</param>
         /// <returns></returns>
-        Task<PaginatedList<List<T>>> SearchAsync<TField>(int pageIndex, int pageSize, string field, TField value);
+        Task<PaginatedList<T>> SearchAsync<TField>(int pageIndex, int pageSize, string field, TField value);
 
         /// <summary>
         /// 查询分页数据集合
@@ -210,10 +210,10 @@ namespace ProjectApi.Interfaces
         /// <param name="pageSize">页大小</param>
         /// <param name="field">字段名</param>
         /// <param name="value">字段值</param>
-        /// <param name="orderField">排序字段</param>
+        /// <param name="sortField">排序字段</param>
         /// <param name="isAsc">是否升序</param>
         /// <returns></returns>
-        Task<PaginatedList<List<T>>> SearchAsync<TField>(int pageIndex, int pageSize, string field, TField value, string orderField, bool isAsc = true);
+        Task<PaginatedList<T>> SearchAsync<TField>(int pageIndex, int pageSize, string field, TField value, string sortField, bool isAsc = true);
 
         /// <summary>
         /// 查询分页数据集合
@@ -222,7 +222,7 @@ namespace ProjectApi.Interfaces
         /// <param name="pageSize">页大小</param>
         /// <param name="filter">过滤条件</param>
         /// <returns></returns>
-        Task<PaginatedList<List<T>>> SearchAsync(int pageIndex, int pageSize, FilterDefinition<T> filter);
+        Task<PaginatedList<T>> SearchAsync(int pageIndex, int pageSize, FilterDefinition<T> filter);
 
         /// <summary>
         /// 查询分页数据集合
@@ -230,10 +230,10 @@ namespace ProjectApi.Interfaces
         /// <param name="pageIndex">页索引</param>
         /// <param name="pageSize">页大小</param>
         /// <param name="filter">过滤条件</param>
-        /// <param name="orderField">排序字段</param>
+        /// <param name="sortField">排序字段</param>
         /// <param name="isAsc">是否升序</param>
         /// <returns></returns>
-        Task<PaginatedList<List<T>>> SearchAsync<TField>(int pageIndex, int pageSize, FilterDefinition<T> filter, string orderField, bool isAsc = true);
+        Task<PaginatedList<T>> SearchAsync<TField>(int pageIndex, int pageSize, FilterDefinition<T> filter, string sortField, bool isAsc = true);
 
         /// <summary>
         /// 查询分页数据集合
@@ -241,9 +241,9 @@ namespace ProjectApi.Interfaces
         /// <param name="pageIndex">页索引</param>
         /// <param name="pageSize">页大小</param>
         /// <param name="filter">过滤条件</param>
-        /// <param name="order">排序条件</param>
+        /// <param name="sort">排序条件</param>
         /// <returns></returns>
-        Task<PaginatedList<List<T>>> SearchAsync(int pageIndex, int pageSize, FilterDefinition<T> filter, FilterDefinition<T> order);
+        Task<PaginatedList<T>> SearchAsync(int pageIndex, int pageSize, FilterDefinition<T> filter, SortDefinition<T> sort);
 
         /// <summary>
         /// 得到查询数量
