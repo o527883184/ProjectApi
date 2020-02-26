@@ -11,14 +11,20 @@ namespace ProjectApi.Models
         private const int DefaultMaxPageSize = 100;
         private const string DefaultOrderBy = nameof(IEntity.Id);
 
-        private int _pageIndex = 0;
-        public int PageIndex
+        private int _pageNumber = 1;
+        /// <summary>
+        /// 页码
+        /// </summary>
+        public int PageNumber
         {
-            get => _pageIndex;
-            set => _pageIndex = value >= 0 ? value : 0;
+            get => _pageNumber;
+            set => _pageNumber = value > 0 ? value : _pageNumber;
         }
 
         private int _pageSize = DefaultPageSize;
+        /// <summary>
+        /// 页大小
+        /// </summary>
         public virtual int PageSize
         {
             get => _pageSize;
@@ -26,6 +32,9 @@ namespace ProjectApi.Models
         }
 
         private int _maxPageSize = DefaultMaxPageSize;
+        /// <summary>
+        /// 最大页大小
+        /// </summary>
         public virtual int MaxPageSize
         {
             get => _maxPageSize;
@@ -36,6 +45,9 @@ namespace ProjectApi.Models
         /// 默认排序(Id)
         /// </summary>
         private string _orderBy = DefaultOrderBy;
+        /// <summary>
+        /// 排序
+        /// </summary>
         public string OrderBy
         {
             get => _orderBy;

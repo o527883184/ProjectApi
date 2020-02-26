@@ -58,11 +58,11 @@ namespace ProjectApi
             });
 
             // Éú³ÉURI
-            services.AddScoped<IUrlHelper>(factory =>
-            {
-                var actionContext = factory.GetService<IActionContextAccessor>().ActionContext;
-                return new UrlHelper(actionContext);
-            });
+            //services.AddScoped<IUrlHelper>(factory =>
+            //{
+            //    var actionContext = factory.GetService<IActionContextAccessor>().ActionContext;
+            //    return new UrlHelper(actionContext);
+            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

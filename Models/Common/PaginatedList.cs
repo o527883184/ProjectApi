@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace ProjectApi.Models
 {
@@ -15,20 +12,25 @@ namespace ProjectApi.Models
         /// <summary>
         /// 数据总数
         /// </summary>
-        public int TotalCount { get; set; }
+        public long TotalCount { get; set; }
         /// <summary>
-        /// 页总数
+        /// 页码总数
         /// </summary>
-        public int PageCount => TotalCount / PaginationBase.PageSize + (TotalCount % PaginationBase.PageSize > 0 ? 1 : 0);
+        public int PageCount => (int)TotalCount / PaginationBase.PageSize + (TotalCount % PaginationBase.PageSize > 0 ? 1 : 0);
+        /// <summary>
+        /// 是否有上一页
+        /// </summary>
+        public bool HasPre => PaginationBase.PageNumber > 1;
+        /// <summary>
+        /// 是否有下一页
+        /// </summary>
+        public bool HasNext => PaginationBase.PageNumber < PageCount;
 
-        public bool HasPre => PaginationBase.PageIndex > 0;
-        public bool HasNext => PaginationBase.PageIndex < PageCount - 1;
-
-        public PaginatedList(int pageIndex, int pageSize, int totalCount, IEnumerable<T> data)
+        public PaginatedList(int pageIndex, int pageSize, long totalCount, IEnumerable<T> data)
         {
             PaginationBase = new PaginationBase
             {
-                PageIndex = pageIndex,
+                PageNumber = pageIndex,
                 PageSize = pageSize
             };
             TotalCount = totalCount;

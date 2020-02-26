@@ -22,16 +22,16 @@ namespace ProjectApi.Controllers
         /// <param name="parameters"></param>
         /// <param name="routeName"></param>
         /// <param name="paginatedList"></param>
-        protected void CreateMeta<T>(IUrlHelper urlHelper, PaginationParameters parameters, string routeName, PaginatedList<T> paginatedList) where T : class
+        protected void CreateMeta<T>(PaginationParameters parameters, string routeName, PaginatedList<T> paginatedList) where T : class
         {
             var meta = new
             {
                 paginatedList.TotalCount,
                 paginatedList.PageCount,
-                paginatedList.PaginationBase.PageIndex,
+                paginatedList.PaginationBase.PageNumber,
                 paginatedList.PaginationBase.PageSize,
-                PrePageLink = paginatedList.HasPre ? CreateUri(urlHelper, parameters, PaginationUriType.PrePage, routeName) : null,
-                NextPageLink = paginatedList.HasNext ? CreateUri(urlHelper, parameters, PaginationUriType.NextPage, routeName) : null
+                PrePageLink = paginatedList.HasPre ? CreateUri(parameters, PaginationUriType.PrePage, routeName) : null,
+                NextPageLink = paginatedList.HasNext ? CreateUri(parameters, PaginationUriType.NextPage, routeName) : null
             };
 
             Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(meta, new JsonSerializerSettings
@@ -48,29 +48,27 @@ namespace ProjectApi.Controllers
         /// <param name="type"></param>
         /// <param name="routeName"></param>
         /// <returns></returns>
-        private string CreateUri(IUrlHelper urlHelper, PaginationBase parameters, PaginationUriType type, string routeName)
+        private string CreateUri(PaginationBase parameters, PaginationUriType type, string routeName)
         {
             switch (type)
             {
                 case PaginationUriType.PrePage:
-                    var preParameters = new PaginationBase
+                    var preParameters = new
                     {
-                        PageIndex = parameters.PageIndex--,
-                        PageSize = parameters.PageSize,
-                        OrderBy = parameters.OrderBy,
-                        MaxPageSize = parameters.MaxPageSize
+                        pageNumber = parameters.PageNumber - 1,
+                        pageSize = parameters.PageSize,
+                        //OrderBy = parameters.OrderBy,
                     };
-                    return urlHelper.Link(routeName, preParameters);
+                    return Url.Link(routeName, preParameters);
 
                 case PaginationUriType.NextPage:
-                    var nextParameters = new PaginationBase
+                    var nextParameters = new
                     {
-                        PageIndex = parameters.PageIndex++,
-                        PageSize = parameters.PageSize,
-                        OrderBy = parameters.OrderBy,
-                        MaxPageSize = parameters.MaxPageSize
+                        pageNumber = parameters.PageNumber + 1,
+                        pageSize = parameters.PageSize,
+                        //OrderBy = parameters.OrderBy,
                     };
-                    return urlHelper.Link(routeName, nextParameters);
+                    return Url.Link(routeName, nextParameters);
 
                 default:
                     return null;

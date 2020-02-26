@@ -9,7 +9,7 @@ using ProjectApi.Models;
 namespace ProjectApi.Controllers
 {
     [Route("api/user")]
-    [Authorize]
+    //[Authorize]
     [ApiController]
     public class UserController : BaseController
     {
@@ -18,24 +18,21 @@ namespace ProjectApi.Controllers
         /// 数据模型映射
         /// </summary>
         private readonly IMapper _mapper;
-        private readonly IUrlHelper _urlHelper;
 
-        public UserController(IUserBll userBll, IMapper mapper, IUrlHelper urlHelper)
+        public UserController(IUserBll userBll, IMapper mapper)
         {
             _userBll = userBll;
             _mapper = mapper;
-            _urlHelper = urlHelper;
         }
 
         [HttpGet(Name = "GetUser")]
         public async Task<ActionResult<PaginatedList<User_Public>>> Get([FromQuery]PaginationParameters parameters)
         {
             var users = await _userBll.Get(parameters);
-            var userPublics = _mapper.Map<PaginatedList<User>, PaginatedList<User_Public>>(users);
 
-            CreateMeta(_urlHelper, parameters, "GetUser", users);
+            CreateMeta(parameters, "GetUser", users);
 
-            return Ok(userPublics);
+            return Ok(users);
         }
     }
 }
