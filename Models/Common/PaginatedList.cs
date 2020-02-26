@@ -26,11 +26,25 @@ namespace ProjectApi.Models
         /// </summary>
         public bool HasNext => PaginationBase.PageNumber < PageCount;
 
-        public PaginatedList(int pageIndex, int pageSize, long totalCount, List<T> data)
+        /// <summary>
+        /// 分页数据返回类
+        /// </summary>
+        public PaginatedList()
+        {
+        }
+
+        /// <summary>
+        /// 分页数据返回类
+        /// </summary>
+        /// <param name="pageNumber"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="totalCount"></param>
+        /// <param name="data"></param>
+        public PaginatedList(int pageNumber, int pageSize, long totalCount, List<T> data)
         {
             PaginationBase = new PaginationBase
             {
-                PageNumber = pageIndex,
+                PageNumber = pageNumber,
                 PageSize = pageSize
             };
             TotalCount = totalCount;

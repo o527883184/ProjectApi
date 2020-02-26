@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace ProjectApi.Models
+﻿namespace ProjectApi.Models
 {
     /// <summary>
     /// 数据模型-业务模型映射

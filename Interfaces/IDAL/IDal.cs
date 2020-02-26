@@ -11,7 +11,7 @@ namespace ProjectApi.Interfaces
     /// <summary>
     /// DAL数据访问基本方法封装
     /// </summary>
-    public interface IBaseDal<T> where T : class, IEntity
+    public interface IDal<T> where T : class, IEntity
     {
         /// <summary>
         /// 新增

@@ -9,7 +9,7 @@ namespace ProjectApi.Models
     {
         private const int DefaultPageSize = 10;
         private const int DefaultMaxPageSize = 100;
-        private const string DefaultOrderBy = nameof(IEntity.Id);
+        private const string DefaultsortBy = nameof(IEntity.Id);
 
         private int _pageNumber = 1;
         /// <summary>
@@ -44,14 +44,14 @@ namespace ProjectApi.Models
         /// <summary>
         /// 默认排序(Id)
         /// </summary>
-        private string _orderBy = DefaultOrderBy;
+        private string _sortBy = DefaultsortBy;
         /// <summary>
         /// 排序
         /// </summary>
-        public string OrderBy
+        public string SortBy
         {
-            get => _orderBy;
-            set => _orderBy = value ?? DefaultOrderBy;
+            get => _sortBy;
+            set => _sortBy = value ?? DefaultsortBy;
         }
     }
 }

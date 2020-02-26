@@ -13,6 +13,9 @@ using Microsoft.Extensions.Logging;
 using ProjectApi.Exceptions;
 using System;
 using AutoMapper;
+using ProjectApi.Interfaces;
+using ProjectApi.DAL;
+using ProjectApi.BLL;
 
 namespace ProjectApi
 {
@@ -57,12 +60,9 @@ namespace ProjectApi
                 options.ExcludedHosts.Add("www.example.com");
             });
 
-            // 生成URI
-            //services.AddScoped<IUrlHelper>(factory =>
-            //{
-            //    var actionContext = factory.GetService<IActionContextAccessor>().ActionContext;
-            //    return new UrlHelper(actionContext);
-            //});
+            // 注入数据仓储
+            services.AddScoped(typeof(IDal<>), typeof(Dal<>));
+            services.AddScoped<IUserBll, UserBll>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

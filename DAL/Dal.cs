@@ -16,17 +16,17 @@ namespace ProjectApi.DAL
     /// 数据访问基本方法
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class BaseDal<T> : IBaseDal<T> where T : class, IEntity
+    public class Dal<T> : IDal<T> where T : class, IEntity
     {
         private readonly MogoContext _mogoContext;
-        private readonly ILogger<BaseDal<T>> _logger;
+        private readonly ILogger<Dal<T>> _logger;
         private readonly IMongoCollection<T> _col;
 
-        public BaseDal(MogoContext mogoContext, ILogger<BaseDal<T>> logger)
+        public Dal(MogoContext mogoContext, ILogger<Dal<T>> logger)
         {
             _mogoContext = mogoContext;
             _logger = logger;
-            _col = _mogoContext.GetCollection<T>(nameof(T).ToLower());
+            _col = _mogoContext.GetCollection<T>(typeof(T).Name.ToLower());
         }
 
         public async Task<int> CreateAsync(T entity)
@@ -89,37 +89,32 @@ namespace ProjectApi.DAL
             return await _col.Find(Builders<T>.Filter.Empty).ToListAsync();
         }
 
-        public async Task<PaginatedList<T>> SearchAsync(int pageIndex, int pageSize) => await SearchAsync(pageIndex, pageSize);
+        public async Task<PaginatedList<T>> SearchAsync(int pageIndex, int pageSize) => await SearchAsync(pageIndex, pageSize, null, null);
 
-        public async Task<PaginatedList<T>> SearchAsync(int pageIndex, int pageSize, string sortField, bool isAsc = true) => await SearchAsync(pageIndex, pageSize, sort: isAsc ? Builders<T>.Sort.Ascending(sortField) : Builders<T>.Sort.Descending(sortField));
+        public async Task<PaginatedList<T>> SearchAsync(int pageIndex, int pageSize, string sortField, bool isAsc = true) => await SearchAsync(pageIndex, pageSize, null, isAsc ? Builders<T>.Sort.Ascending(sortField) : Builders<T>.Sort.Descending(sortField));
 
         public async Task<PaginatedList<T>> SearchAsync<TField>(int pageIndex, int pageSize, string field, TField value) => await SearchAsync(pageIndex, pageSize, Builders<T>.Filter.Eq(field, value));
 
         public async Task<PaginatedList<T>> SearchAsync<TField>(int pageIndex, int pageSize, string field, TField value, string sortField, bool isAsc = true) => await SearchAsync(pageIndex, pageSize, Builders<T>.Filter.Eq(field, value), isAsc ? Builders<T>.Sort.Ascending(sortField) : Builders<T>.Sort.Descending(sortField));
 
-        public async Task<PaginatedList<T>> SearchAsync(int pageIndex, int pageSize, FilterDefinition<T> filter) => await SearchAsync(pageIndex, pageSize, filter);
+        public async Task<PaginatedList<T>> SearchAsync(int pageIndex, int pageSize, FilterDefinition<T> filter) => await SearchAsync(pageIndex, pageSize, filter, null);
 
         public async Task<PaginatedList<T>> SearchAsync<TField>(int pageIndex, int pageSize, FilterDefinition<T> filter, string sortField, bool isAsc = true) => await SearchAsync(pageIndex, pageSize, filter, isAsc ? Builders<T>.Sort.Ascending(sortField) : Builders<T>.Sort.Descending(sortField));
 
-        public async Task<PaginatedList<T>> SearchAsync(int pageIndex = 0, int pageSize = 20, FilterDefinition<T> filter = null, SortDefinition<T> sort = null)
+        public async Task<PaginatedList<T>> SearchAsync(int pageIndex, int pageSize, FilterDefinition<T> filter, SortDefinition<T> sort)
         {
             var data = new List<T>();
-            var total = 0L;
 
-            if (filter != null && sort != null)
+            if (filter == null)
+                filter = Builders<T>.Filter.Empty;
+
+            var total = await GetCountAsync(filter);
+            if (total > 0)
             {
-                data = await _col.Find(filter).Sort(sort).Skip(pageIndex).Limit(pageSize).ToListAsync();
-                total = await GetCountAsync(filter);
-            }
-            else if (filter != null)
-            {
-                data = await _col.Find(filter).Skip(pageIndex).Limit(pageSize).ToListAsync();
-                total = await GetCountAsync(filter);
-            }
-            else if (sort != null)
-            {
-                data = await _col.Find(filter).Sort(sort).Skip(pageIndex).Limit(pageSize).ToListAsync();
-                total = await GetCountAsync();
+                if (sort != null)
+                    data = await _col.Find(filter).Sort(sort).Skip(pageIndex).Limit(pageSize).ToListAsync();
+                else
+                    data = await _col.Find(filter).Skip(pageIndex).Limit(pageSize).ToListAsync();
             }
 
             return new PaginatedList<T>(pageIndex, pageSize, total, data);

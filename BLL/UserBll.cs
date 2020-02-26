@@ -12,25 +12,19 @@ namespace ProjectApi.BLL
 {
     public class UserBll : IUserBll
     {
-        private readonly MogoContext _mogoContext;
         private readonly ILogger<UserBll> _logger;
         private readonly IMapper _mapper;
+        private readonly IDal<User> _dal;
 
-        public UserBll(MogoContext mogoContext, ILogger<UserBll> logger, IMapper mapper)
+        public UserBll(MogoContext mogoContext, ILogger<UserBll> logger, IMapper mapper, IDal<User> dal)
         {
-            _mogoContext = mogoContext;
             _logger = logger;
             _mapper = mapper;
+            _dal = dal;
         }
-        public async Task<PaginatedList<User_Public>> Get(PaginationParameters parameters)
+        public async Task<PaginatedList<User>> Get(PaginationParameters parameters)
         {
-            var count = await _mogoContext.GetCollection<User>("user").CountDocumentsAsync(t => t.Id != null);
-
-            var data = await _mogoContext.GetCollection<User>("user").Find(t => t.Id != null).Skip((parameters.PageNumber - 1) * parameters.PageSize).Limit(parameters.PageSize).ToListAsync().ConfigureAwait(false);
-
-            var users = _mapper.Map<List<User>, List<User_Public>>(data);
-
-            return new PaginatedList<User_Public>(parameters.PageNumber, parameters.PageSize, count, users);
+            return await _dal.SearchAsync(parameters.PageNumber - 1, parameters.PageSize);
         }
     }
 }

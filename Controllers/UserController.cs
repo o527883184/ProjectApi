@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -29,10 +30,8 @@ namespace ProjectApi.Controllers
         public async Task<ActionResult<PaginatedList<User_Public>>> Get([FromQuery]PaginationParameters parameters)
         {
             var users = await _userBll.Get(parameters);
-
             CreateMeta(parameters, "GetUser", users);
-
-            return Ok(users);
+            return Ok(_mapper.Map<List<User_Public>>(users));
         }
     }
 }

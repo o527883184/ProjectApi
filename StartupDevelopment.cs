@@ -5,14 +5,12 @@ using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Infrastructure;
-using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
 using ProjectApi.BLL;
+using ProjectApi.DAL;
 using ProjectApi.Data;
 using ProjectApi.Exceptions;
 using ProjectApi.Interfaces;
@@ -61,7 +59,9 @@ namespace ProjectApi
 
             //services.AddAuthorization();
 
+
             // 注入数据仓储
+            services.AddScoped(typeof(IDal<>), typeof(Dal<>));
             services.AddScoped<IUserBll, UserBll>();
 
             // 生成URI
