@@ -13,13 +13,11 @@ namespace ProjectApi.BLL
     public class UserBll : IUserBll
     {
         private readonly ILogger<UserBll> _logger;
-        private readonly IMapper _mapper;
         private readonly IDal<User> _dal;
 
         public UserBll(MogoContext mogoContext, ILogger<UserBll> logger, IMapper mapper, IDal<User> dal)
         {
             _logger = logger;
-            _mapper = mapper;
             _dal = dal;
         }
         public async Task<PaginatedList<User>> Get(PaginationParameters parameters)
