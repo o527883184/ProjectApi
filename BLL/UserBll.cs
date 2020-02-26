@@ -8,7 +8,7 @@ using ProjectApi.Entitys;
 using ProjectApi.Interfaces;
 using ProjectApi.Models;
 
-namespace ProjectApi.Business
+namespace ProjectApi.BLL
 {
     public class UserBll : IUserBll
     {
