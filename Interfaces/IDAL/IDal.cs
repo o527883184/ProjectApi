@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using ProjectApi.Models;
 
@@ -11,7 +12,7 @@ namespace ProjectApi.Interfaces
     /// <summary>
     /// DAL数据访问基本方法接口
     /// </summary>
-    public interface IDal<T> where T : class, IEntity
+    public interface IDal<T> where T : class, IEntity, new()
     {
         /// <summary>
         /// 新增
@@ -27,7 +28,7 @@ namespace ProjectApi.Interfaces
         /// </summary>
         /// <param name="id">主键ID</param>
         /// <returns></returns>
-        Task<int> DeleteAsync(string id);
+        Task<int> DeleteAsync(ObjectId id);
 
         /// <summary>
         /// 删除
@@ -68,9 +69,28 @@ namespace ProjectApi.Interfaces
         /// <summary>
         /// 更新
         /// </summary>
-        /// <param name="entity"></param>
+        /// <param name="entity">更新实体</param>
         /// <returns></returns>
         Task<int> UpdateAsync(T entity);
+
+        /// <summary>
+        /// 更新
+        /// </summary>
+        /// <typeparam name="TField"></typeparam>
+        /// <param name="id">主键ID</param>
+        /// <param name="field">更新字段名</param>
+        /// <param name="value">更新字段值</param>
+        /// <returns></returns>
+        Task<int> UpdateAsync<TField>(ObjectId id, string field, TField value);
+
+        /// <summary>
+        /// 更新
+        /// </summary>
+        /// <typeparam name="TField"></typeparam>
+        /// <param name="id">主键ID</param>
+        /// <param name="dict">更新字段集合</param>
+        /// <returns></returns>
+        Task<int> UpdateAsync<TField>(ObjectId id, Dictionary<string, TField> dict);
 
         /// <summary>
         /// 更新
@@ -78,17 +98,16 @@ namespace ProjectApi.Interfaces
         /// <param name="id">主键ID</param>
         /// <param name="update">更新设置</param>
         /// <returns></returns>
-        Task<int> UpdateAsync(string id, FilterDefinition<T> update);
+        Task<int> UpdateAsync(ObjectId id, UpdateDefinition<T> update);
 
         /// <summary>
         /// 更新
         /// </summary>
         /// <typeparam name="TField"></typeparam>
-        /// <param name="id">主键ID</param>
-        /// <param name="field">字段名</param>
-        /// <param name="value">字段值</param>
+        /// <param name="filter">过滤条件</param>
+        /// <param name="dict">更新字段集合</param>
         /// <returns></returns>
-        Task<int> UpdateAsync<TField>(string id, string field, TField value);
+        Task<int> UpdateAsync<TField>(Expression<Func<T, bool>> filter, Dictionary<string, TField> dict);
 
         /// <summary>
         /// 更新
@@ -96,7 +115,23 @@ namespace ProjectApi.Interfaces
         /// <param name="filter">过滤条件</param>
         /// <param name="update">更新设置</param>
         /// <returns></returns>
-        Task<int> UpdateAsync(FilterDefinition<T> filter, FilterDefinition<T> update);
+        Task<int> UpdateAsync(Expression<Func<T, bool>> filter, UpdateDefinition<T> update);
+
+        /// <summary>
+        /// 批量更新
+        /// </summary>
+        /// <param name="filter">过滤条件</param>
+        /// <param name="dict">更新字段集合</param>
+        /// <returns></returns>
+        Task<int> UpdateManyAsync<TField>(Expression<Func<T, bool>> filter, Dictionary<string, TField> dict);
+
+        /// <summary>
+        /// 批量更新
+        /// </summary>
+        /// <param name="filter">过滤条件</param>
+        /// <param name="update">更新设置</param>
+        /// <returns></returns>
+        Task<int> UpdateManyAsync(Expression<Func<T, bool>> filter, UpdateDefinition<T> update);
 
         #endregion
 
@@ -107,7 +142,7 @@ namespace ProjectApi.Interfaces
         /// </summary>
         /// <param name="id">主键ID</param>
         /// <returns></returns>
-        Task<T> GetAsync(string id);
+        Task<T> GetAsync(ObjectId id);
 
         /// <summary>
         /// 查询
@@ -154,7 +189,7 @@ namespace ProjectApi.Interfaces
         /// <param name="sortField">排序字段</param>
         /// <param name="isAsc">是否升序</param>
         /// <returns></returns>
-        Task<IEnumerable<T>> SearchAsync(string sortField, bool isAsc = true);
+        Task<IEnumerable<T>> SearchAsync(string sortField, bool isAsc);
 
         /// <summary>
         /// 查询数据集合
@@ -191,7 +226,7 @@ namespace ProjectApi.Interfaces
         /// <param name="sortField">排序字段</param>
         /// <param name="isAsc">是否升序</param>
         /// <returns></returns>
-        Task<PaginatedList<T>> SearchAsync(int pageNumber, int pageSize, string sortField, bool isAsc = true);
+        Task<PaginatedList<T>> SearchAsync(int pageNumber, int pageSize, string sortField, bool isAsc);
 
         /// <summary>
         /// 查询分页数据集合
@@ -213,7 +248,7 @@ namespace ProjectApi.Interfaces
         /// <param name="sortField">排序字段</param>
         /// <param name="isAsc">是否升序</param>
         /// <returns></returns>
-        Task<PaginatedList<T>> SearchAsync<TField>(int pageNumber, int pageSize, string field, TField value, string sortField, bool isAsc = true);
+        Task<PaginatedList<T>> SearchAsync<TField>(int pageNumber, int pageSize, string field, TField value, string sortField, bool isAsc);
 
         /// <summary>
         /// 查询分页数据集合
@@ -233,7 +268,7 @@ namespace ProjectApi.Interfaces
         /// <param name="sortField">排序字段</param>
         /// <param name="isAsc">是否升序</param>
         /// <returns></returns>
-        Task<PaginatedList<T>> SearchAsync<TField>(int pageNumber, int pageSize, FilterDefinition<T> filter, string sortField, bool isAsc = true);
+        Task<PaginatedList<T>> SearchAsync(int pageNumber, int pageSize, FilterDefinition<T> filter, string sortField, bool isAsc);
 
         /// <summary>
         /// 查询分页数据集合
@@ -243,7 +278,7 @@ namespace ProjectApi.Interfaces
         /// <param name="filter">过滤条件</param>
         /// <param name="sort">排序条件</param>
         /// <returns></returns>
-        Task<PaginatedList<T>> SearchAsync(int pageNumber, int pageSize, FilterDefinition<T> filter, SortDefinition<T> sort);
+        //Task<PaginatedList<T>> SearchAsync(int pageNumber, int pageSize, FilterDefinition<T> filter, SortDefinition<T> sort);
 
         /// <summary>
         /// 得到查询数量
