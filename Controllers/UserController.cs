@@ -30,10 +30,11 @@ namespace ProjectApi.Controllers
         public async Task<ActionResult<PaginatedList<User_Public>>> Search([FromQuery]PaginationParameters parameters)
         {
             var users = await _userBll.Get(parameters);
-            CreateMeta(parameters, "GetUser", users);
+            CreateMeta(parameters, nameof(Search), users);
             return Ok(_mapper.Map<List<User_Public>>(users));
         }
 
+        [Authorize]
         [HttpPost(Name = nameof(Create))]
         public async Task<ActionResult<int>> Create()
         {
