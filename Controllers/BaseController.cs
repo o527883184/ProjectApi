@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using ProjectApi.Helpers;
+using ProjectApi.Interfaces;
 using ProjectApi.Models;
 
 namespace ProjectApi.Controllers
@@ -55,18 +56,18 @@ namespace ProjectApi.Controllers
                 case PaginationUriType.PrePage:
                     var preParameters = new
                     {
-                        pageNumber = parameters.PageNumber - 1,
-                        pageSize = parameters.PageSize,
-                        //OrderBy = parameters.OrderBy,
+                        PageNumber = parameters.PageNumber - 1,
+                        parameters.PageSize,
+                        SortBy = string.IsNullOrWhiteSpace(parameters.SortBy) || string.Equals(parameters.SortBy, nameof(IEntity.Id)) ? string.Empty : (parameters.IsAsc ? parameters.SortBy : $"-{parameters.SortBy}")
                     };
                     return Url.Link(routeName, preParameters);
 
                 case PaginationUriType.NextPage:
                     var nextParameters = new
                     {
-                        pageNumber = parameters.PageNumber + 1,
-                        pageSize = parameters.PageSize,
-                        //OrderBy = parameters.OrderBy,
+                        PageNumber = parameters.PageNumber + 1,
+                        parameters.PageSize,
+                        SortBy = string.IsNullOrWhiteSpace(parameters.SortBy) || string.Equals(parameters.SortBy, nameof(IEntity.Id)) ? string.Empty : (parameters.IsAsc ? parameters.SortBy : $"-{parameters.SortBy}")
                     };
                     return Url.Link(routeName, nextParameters);
 

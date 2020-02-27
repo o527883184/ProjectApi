@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using MongoDB.Bson;
 using ProjectApi.Entitys;
 using ProjectApi.Interfaces;
 using ProjectApi.Models;
@@ -23,9 +25,24 @@ namespace ProjectApi.BLL
         {
             if (!string.IsNullOrWhiteSpace(parameters.SortBy))
             {
-                return await _dal.SearchAsync(parameters.PageNumber, parameters.PageSize, parameters.SortBy, false);
+                return await _dal.SearchAsync(parameters.PageNumber, parameters.PageSize, parameters.SortBy, parameters.IsAsc);
             }
             return await _dal.SearchAsync(parameters.PageNumber, parameters.PageSize);
+        }
+
+        public async Task<int> Update(User user)
+        {
+            return await _dal.UpdateAsync(user);
+        }
+
+        public async Task<int> Update<TField>(ObjectId id, Dictionary<string, TField> dict)
+        {
+            return await _dal.UpdateAsync(id, dict);
+        }
+
+        public async Task<int> Update<TField>(ObjectId id, string field, TField value)
+        {
+            return await _dal.UpdateAsync(id, field, value);
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Bson;
 using ProjectApi.Entitys;
 using ProjectApi.Interfaces;
 using ProjectApi.Models;
@@ -34,8 +35,7 @@ namespace ProjectApi.Controllers
             return Ok(_mapper.Map<List<User_Public>>(users));
         }
 
-        [Authorize]
-        [HttpPost(Name = nameof(Create))]
+        [HttpPut(Name = nameof(Create))]
         public async Task<ActionResult<int>> Create()
         {
             var user = new User_Public
@@ -44,6 +44,22 @@ namespace ProjectApi.Controllers
             };
 
             return await _userBll.Create(_mapper.Map<User>(user));
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<int>> Update()
+        {
+            var user = new User
+            {
+                Id = ObjectId.Parse("5e57541edef0e61608b06cbb"),
+                Name = "12345"
+            };
+
+            await _userBll.Update(user);
+
+            await _userBll.Update(user.Id, "name", "12345abc");
+
+            return 1;
         }
     }
 }
