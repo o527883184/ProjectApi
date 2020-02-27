@@ -1,0 +1,499 @@
+2020-02-27 10:50:51.790 +08:00 [INF] User profile is available. Using 'C:\Users\Li\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-02-27 10:50:52.123 +08:00 [INF] Now listening on: https://localhost:5002
+2020-02-27 10:50:52.124 +08:00 [INF] Now listening on: http://localhost:5001
+2020-02-27 10:50:52.125 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-27 10:50:52.126 +08:00 [INF] Hosting environment: Development
+2020-02-27 10:50:52.127 +08:00 [INF] Content root path: C:\Users\Li\source\repos\ProjectApi
+2020-02-27 10:51:33.766 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/?_=1582771855436  
+2020-02-27 10:51:33.779 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:51:33.796 +08:00 [INF] Request finished in 32.4291ms 307 
+2020-02-27 10:51:33.890 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/?_=1582771855436  
+2020-02-27 10:51:33.891 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:51:33.910 +08:00 [INF] Request finished in 20.2188ms 404 
+2020-02-27 10:51:42.862 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/user?_=1582771855437  
+2020-02-27 10:51:42.865 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:51:42.866 +08:00 [INF] Request finished in 3.5192ms 307 
+2020-02-27 10:51:42.871 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?_=1582771855437  
+2020-02-27 10:51:42.871 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:51:42.873 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:51:42.926 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 10:51:43.362 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 10:51:43.612 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 242.8736ms.
+2020-02-27 10:51:43.617 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 10:51:43.637 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 706.0216ms
+2020-02-27 10:51:43.640 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:51:43.642 +08:00 [INF] Request finished in 771.8189ms 200 application/json; charset=utf-8
+2020-02-27 10:52:18.415 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/user?_=1582771855438  
+2020-02-27 10:52:24.941 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:52:24.942 +08:00 [INF] Request finished in 6527.9086ms 307 
+2020-02-27 10:52:24.946 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?_=1582771855438  
+2020-02-27 10:52:24.947 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:52:24.948 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:52:24.949 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 10:52:24.966 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 10:52:24.972 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 5.1691ms.
+2020-02-27 10:52:24.975 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 10:52:24.978 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 25.3224ms
+2020-02-27 10:52:24.979 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:52:24.982 +08:00 [INF] Request finished in 36.1679ms 200 application/json; charset=utf-8
+2020-02-27 10:52:28.542 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/user?_=1582771855439  
+2020-02-27 10:52:28.544 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:52:28.546 +08:00 [INF] Request finished in 4.4657ms 307 
+2020-02-27 10:52:28.551 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?_=1582771855439  
+2020-02-27 10:52:28.554 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:52:28.555 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:52:28.557 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 10:52:28.571 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 10:52:28.582 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 8.9961ms.
+2020-02-27 10:52:28.584 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 10:52:28.586 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 26.0556ms
+2020-02-27 10:52:28.587 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:52:28.588 +08:00 [INF] Request finished in 37.0656ms 200 application/json; charset=utf-8
+2020-02-27 10:52:29.464 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/user?_=1582771855440  
+2020-02-27 10:52:29.466 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:52:29.468 +08:00 [INF] Request finished in 3.8436ms 307 
+2020-02-27 10:52:29.473 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?_=1582771855440  
+2020-02-27 10:52:29.475 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:52:29.476 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:52:29.478 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 10:52:29.492 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 10:52:29.499 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4.9362ms.
+2020-02-27 10:52:29.502 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 10:52:29.505 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 24.1633ms
+2020-02-27 10:52:29.506 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:52:29.507 +08:00 [INF] Request finished in 34.0788ms 200 application/json; charset=utf-8
+2020-02-27 10:52:30.085 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/user?_=1582771855441  
+2020-02-27 10:52:30.087 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:52:30.089 +08:00 [INF] Request finished in 3.5908ms 307 
+2020-02-27 10:52:30.093 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?_=1582771855441  
+2020-02-27 10:52:30.094 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:52:30.096 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:52:30.098 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 10:52:30.111 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 10:52:30.117 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4.8697ms.
+2020-02-27 10:52:30.120 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 10:52:30.122 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 20.9564ms
+2020-02-27 10:52:30.123 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:52:30.126 +08:00 [INF] Request finished in 32.8339ms 200 application/json; charset=utf-8
+2020-02-27 10:52:30.739 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/user?_=1582771855442  
+2020-02-27 10:52:30.740 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:52:30.741 +08:00 [INF] Request finished in 2.876ms 307 
+2020-02-27 10:52:30.744 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?_=1582771855442  
+2020-02-27 10:52:30.745 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:52:30.747 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:52:30.748 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 10:52:30.762 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 10:52:30.768 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4.6146ms.
+2020-02-27 10:52:30.770 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 10:52:30.772 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 20.1152ms
+2020-02-27 10:52:30.773 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:52:30.774 +08:00 [INF] Request finished in 30.1775ms 200 application/json; charset=utf-8
+2020-02-27 10:52:31.276 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/user?_=1582771855443  
+2020-02-27 10:52:31.278 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:52:31.281 +08:00 [INF] Request finished in 4.5824ms 307 
+2020-02-27 10:52:31.289 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?_=1582771855443  
+2020-02-27 10:52:31.290 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:52:31.293 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:52:31.295 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 10:52:31.310 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 10:52:31.317 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4.8878ms.
+2020-02-27 10:52:31.319 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 10:52:31.321 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 20.8473ms
+2020-02-27 10:52:31.322 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:52:31.323 +08:00 [INF] Request finished in 34.0539ms 200 application/json; charset=utf-8
+2020-02-27 10:52:31.724 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/user?_=1582771855444  
+2020-02-27 10:52:31.725 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:52:31.728 +08:00 [INF] Request finished in 3.643ms 307 
+2020-02-27 10:52:31.732 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?_=1582771855444  
+2020-02-27 10:52:31.733 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:52:31.735 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:52:31.737 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 10:52:31.751 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 10:52:31.758 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 5.6179ms.
+2020-02-27 10:52:31.760 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 10:52:31.764 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 24.0504ms
+2020-02-27 10:52:31.766 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:52:31.768 +08:00 [INF] Request finished in 35.7217ms 200 application/json; charset=utf-8
+2020-02-27 10:52:31.909 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/user?_=1582771855445  
+2020-02-27 10:52:31.910 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:52:31.912 +08:00 [INF] Request finished in 2.6528ms 307 
+2020-02-27 10:52:31.921 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?_=1582771855445  
+2020-02-27 10:52:31.922 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:52:31.923 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:52:31.924 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 10:52:31.938 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 10:52:31.945 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 5.0798ms.
+2020-02-27 10:52:31.948 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 10:52:31.950 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 22.5772ms
+2020-02-27 10:52:31.951 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:52:31.953 +08:00 [INF] Request finished in 36.9216ms 200 application/json; charset=utf-8
+2020-02-27 10:52:32.084 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/user?_=1582771855446  
+2020-02-27 10:52:32.085 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:52:32.087 +08:00 [INF] Request finished in 3.0109ms 307 
+2020-02-27 10:52:32.091 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?_=1582771855446  
+2020-02-27 10:52:32.092 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:52:32.096 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:52:32.097 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 10:52:32.112 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 10:52:32.119 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 5.3361ms.
+2020-02-27 10:52:32.121 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 10:52:32.125 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 23.9429ms
+2020-02-27 10:52:32.126 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:52:32.128 +08:00 [INF] Request finished in 37.3476ms 200 application/json; charset=utf-8
+2020-02-27 10:52:32.252 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/user?_=1582771855447  
+2020-02-27 10:52:32.253 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:52:32.255 +08:00 [INF] Request finished in 2.904ms 307 
+2020-02-27 10:52:32.258 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?_=1582771855447  
+2020-02-27 10:52:32.259 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:52:32.261 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:52:32.264 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 10:52:32.277 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 10:52:32.283 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4.6624ms.
+2020-02-27 10:52:32.285 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 10:52:32.288 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 21.0661ms
+2020-02-27 10:52:32.289 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:52:32.292 +08:00 [INF] Request finished in 34.2025ms 200 application/json; charset=utf-8
+2020-02-27 10:52:32.415 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/user?_=1582771855448  
+2020-02-27 10:52:32.416 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:52:32.417 +08:00 [INF] Request finished in 2.3511ms 307 
+2020-02-27 10:52:32.421 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?_=1582771855448  
+2020-02-27 10:52:32.422 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:52:32.425 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:52:32.426 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 10:52:32.442 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 10:52:32.448 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4.625ms.
+2020-02-27 10:52:32.450 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 10:52:32.452 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 22.4734ms
+2020-02-27 10:52:32.454 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:52:32.455 +08:00 [INF] Request finished in 34.5182ms 200 application/json; charset=utf-8
+2020-02-27 10:52:32.583 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/user?_=1582771855449  
+2020-02-27 10:52:32.585 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:52:32.587 +08:00 [INF] Request finished in 4.3007ms 307 
+2020-02-27 10:52:32.593 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?_=1582771855449  
+2020-02-27 10:52:32.594 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:52:32.596 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:52:32.598 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 10:52:32.612 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 10:52:32.617 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 3.6628ms.
+2020-02-27 10:52:32.620 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 10:52:32.623 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 22.4437ms
+2020-02-27 10:52:32.625 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:52:32.626 +08:00 [INF] Request finished in 32.5204ms 200 application/json; charset=utf-8
+2020-02-27 10:52:50.588 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5001/api/user?pagesize=2&_=1582771855450  
+2020-02-27 10:52:50.589 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:52:50.590 +08:00 [INF] Request finished in 2.7466ms 307 
+2020-02-27 10:52:50.595 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?pagesize=2&_=1582771855450  
+2020-02-27 10:52:50.597 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:52:50.599 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:52:50.601 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 10:52:50.615 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 10:52:50.640 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 23.8282ms.
+2020-02-27 10:52:50.642 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 10:52:50.644 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 40.6783ms
+2020-02-27 10:52:50.645 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:52:50.647 +08:00 [INF] Request finished in 51.4555ms 200 application/json; charset=utf-8
+2020-02-27 10:53:46.016 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?pageNumber=2&pageSize=2&_=1582771855451  
+2020-02-27 10:53:46.017 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:53:46.019 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:53:46.021 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 10:53:46.039 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 10:53:46.045 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 5.4236ms.
+2020-02-27 10:53:46.049 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 10:53:46.051 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 27.4247ms
+2020-02-27 10:53:46.053 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:53:46.054 +08:00 [INF] Request finished in 38.5365ms 200 application/json; charset=utf-8
+2020-02-27 10:53:54.898 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?pageNumber=2&pageSize=2&_=1582771855452  
+2020-02-27 10:53:54.900 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:53:54.901 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:53:54.903 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 10:53:54.917 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 10:53:54.922 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 3.794ms.
+2020-02-27 10:53:54.925 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 10:53:54.928 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 21.4068ms
+2020-02-27 10:53:54.929 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:53:54.930 +08:00 [INF] Request finished in 32.1069ms 200 application/json; charset=utf-8
+2020-02-27 10:54:05.781 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?pageNumber=3&pageSize=2&_=1582771855453  
+2020-02-27 10:54:05.783 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:54:05.786 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:54:05.788 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 10:54:05.803 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 10:54:05.809 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4.5126ms.
+2020-02-27 10:54:05.812 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 10:54:05.814 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 21.5062ms
+2020-02-27 10:54:05.815 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:54:05.818 +08:00 [INF] Request finished in 36.1917ms 200 application/json; charset=utf-8
+2020-02-27 10:54:15.762 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?pageNumber=2&pageSize=2&_=1582771855454  
+2020-02-27 10:54:15.763 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:54:15.765 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:54:15.767 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 10:54:15.782 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 10:54:15.787 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 3.9846ms.
+2020-02-27 10:54:15.790 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 10:54:15.793 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 23.1685ms
+2020-02-27 10:54:15.795 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:54:15.797 +08:00 [INF] Request finished in 34.8763ms 200 application/json; charset=utf-8
+2020-02-27 10:55:36.267 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?pageNumber=2&pageSize=2&_=1582771855455  
+2020-02-27 10:55:36.269 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:55:36.271 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:55:36.273 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 10:55:36.290 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 10:57:18.931 +08:00 [INF] User profile is available. Using 'C:\Users\Li\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-02-27 10:57:19.217 +08:00 [INF] Now listening on: https://localhost:5002
+2020-02-27 10:57:19.219 +08:00 [INF] Now listening on: http://localhost:5001
+2020-02-27 10:57:19.220 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-27 10:57:19.221 +08:00 [INF] Hosting environment: Development
+2020-02-27 10:57:19.222 +08:00 [INF] Content root path: C:\Users\Li\source\repos\ProjectApi
+2020-02-27 10:57:22.659 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?pageNumber=2&pageSize=2&_=1582771855456  
+2020-02-27 10:57:22.673 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 10:57:22.690 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 10:57:22.745 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 10:57:23.171 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 11:00:29.179 +08:00 [INF] User profile is available. Using 'C:\Users\Li\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-02-27 11:00:29.431 +08:00 [INF] Now listening on: https://localhost:5002
+2020-02-27 11:00:29.432 +08:00 [INF] Now listening on: http://localhost:5001
+2020-02-27 11:00:29.433 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-27 11:00:29.434 +08:00 [INF] Hosting environment: Development
+2020-02-27 11:00:29.435 +08:00 [INF] Content root path: C:\Users\Li\source\repos\ProjectApi
+2020-02-27 11:00:32.730 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?pageNumber=2&pageSize=2&_=1582771855457  
+2020-02-27 11:00:32.743 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 11:00:32.759 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 11:00:32.812 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 11:00:33.231 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 11:00:52.212 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 18973.8492ms.
+2020-02-27 11:00:52.218 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 11:00:52.239 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 19421.8904ms
+2020-02-27 11:00:52.241 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 11:00:52.246 +08:00 [INF] Request finished in 19518.4966ms 200 application/json; charset=utf-8
+2020-02-27 11:37:52.613 +08:00 [INF] User profile is available. Using 'C:\Users\Li\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-02-27 11:37:52.863 +08:00 [INF] Now listening on: https://localhost:5002
+2020-02-27 11:37:52.864 +08:00 [INF] Now listening on: http://localhost:5001
+2020-02-27 11:37:52.865 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-27 11:37:52.866 +08:00 [INF] Hosting environment: Development
+2020-02-27 11:37:52.867 +08:00 [INF] Content root path: C:\Users\Li\source\repos\ProjectApi
+2020-02-27 11:38:00.100 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?pageNumber=2&pageSize=2&_=1582771855458  
+2020-02-27 11:38:00.114 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 11:38:00.130 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 11:38:00.180 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 11:38:00.594 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 11:38:00.864 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 262.7692ms.
+2020-02-27 11:38:00.869 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 11:38:00.888 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 703.2907ms
+2020-02-27 11:38:00.890 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 11:38:00.895 +08:00 [INF] Request finished in 797.0778ms 200 application/json; charset=utf-8
+2020-02-27 11:38:28.311 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?pageNumber=1&pageSize=2&_=1582771855459  
+2020-02-27 11:38:28.314 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 11:38:28.317 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 11:38:28.319 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 11:38:28.332 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 11:38:28.345 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 11.5966ms.
+2020-02-27 11:38:28.347 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 11:38:28.349 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 28.2551ms
+2020-02-27 11:38:28.350 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 11:38:28.351 +08:00 [INF] Request finished in 40.4348ms 200 application/json; charset=utf-8
+2020-02-27 11:39:54.312 +08:00 [INF] User profile is available. Using 'C:\Users\Li\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-02-27 11:39:54.559 +08:00 [INF] Now listening on: https://localhost:5002
+2020-02-27 11:39:54.560 +08:00 [INF] Now listening on: http://localhost:5001
+2020-02-27 11:39:54.561 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-27 11:39:54.562 +08:00 [INF] Hosting environment: Development
+2020-02-27 11:39:54.563 +08:00 [INF] Content root path: C:\Users\Li\source\repos\ProjectApi
+2020-02-27 11:39:54.746 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?pageNumber=1&pageSize=2&_=1582771855460  
+2020-02-27 11:39:54.758 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 11:39:54.773 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 11:39:54.823 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 11:39:55.234 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 11:39:55.498 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 257.4168ms.
+2020-02-27 11:39:55.504 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 11:39:55.524 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 695.6535ms
+2020-02-27 11:39:55.525 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 11:39:55.530 +08:00 [INF] Request finished in 786.5759ms 200 application/json; charset=utf-8
+2020-02-27 11:43:58.266 +08:00 [INF] User profile is available. Using 'C:\Users\Li\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-02-27 11:43:58.518 +08:00 [INF] Now listening on: https://localhost:5002
+2020-02-27 11:43:58.519 +08:00 [INF] Now listening on: http://localhost:5001
+2020-02-27 11:43:58.520 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-27 11:43:58.521 +08:00 [INF] Hosting environment: Development
+2020-02-27 11:43:58.522 +08:00 [INF] Content root path: C:\Users\Li\source\repos\ProjectApi
+2020-02-27 11:44:07.578 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?pageNumber=1&pageSize=2&_=1582771855461  
+2020-02-27 11:44:07.591 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 11:44:07.606 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 11:44:07.656 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 11:44:08.082 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 11:45:00.563 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 52899.015ms
+2020-02-27 11:45:00.569 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 11:45:00.581 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: Value cannot be null. (Parameter 'field')
+   at MongoDB.Driver.Core.Misc.Ensure.IsNotNull[T](T value, String paramName)
+   at MongoDB.Driver.SimpleFilterDefinition`2..ctor(FieldDefinition`2 field, TField value, Boolean allowScalarValueForArrayField)
+   at MongoDB.Driver.FilterDefinitionBuilder`1.Eq[TField](FieldDefinition`2 field, TField value)
+   at ProjectApi.DAL.Dal`1.SearchAsync[TField](Int32 pageNumber, Int32 pageSize, String field, TField value) in C:\Users\Li\source\repos\ProjectApi\DAL\Dal.cs:line 96
+   at ProjectApi.DAL.Dal`1.SearchAsync(Int32 pageNumber, Int32 pageSize, String sortField, Boolean isAsc) in C:\Users\Li\source\repos\ProjectApi\DAL\Dal.cs:line 94
+   at ProjectApi.BLL.UserBll.Get(PaginationParameters parameters) in C:\Users\Li\source\repos\ProjectApi\BLL\UserBll.cs:line 21
+   at ProjectApi.Controllers.UserController.Get(PaginationParameters parameters) in C:\Users\Li\source\repos\ProjectApi\Controllers\UserController.cs:line 32
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2020-02-27 11:45:00.689 +08:00 [ERR] Value cannot be null. (Parameter 'field')
+System.ArgumentNullException: Value cannot be null. (Parameter 'field')
+   at MongoDB.Driver.Core.Misc.Ensure.IsNotNull[T](T value, String paramName)
+   at MongoDB.Driver.SimpleFilterDefinition`2..ctor(FieldDefinition`2 field, TField value, Boolean allowScalarValueForArrayField)
+   at MongoDB.Driver.FilterDefinitionBuilder`1.Eq[TField](FieldDefinition`2 field, TField value)
+   at ProjectApi.DAL.Dal`1.SearchAsync[TField](Int32 pageNumber, Int32 pageSize, String field, TField value) in C:\Users\Li\source\repos\ProjectApi\DAL\Dal.cs:line 96
+   at ProjectApi.DAL.Dal`1.SearchAsync(Int32 pageNumber, Int32 pageSize, String sortField, Boolean isAsc) in C:\Users\Li\source\repos\ProjectApi\DAL\Dal.cs:line 94
+   at ProjectApi.BLL.UserBll.Get(PaginationParameters parameters) in C:\Users\Li\source\repos\ProjectApi\BLL\UserBll.cs:line 21
+   at ProjectApi.Controllers.UserController.Get(PaginationParameters parameters) in C:\Users\Li\source\repos\ProjectApi\Controllers\UserController.cs:line 32
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2020-02-27 11:45:00.704 +08:00 [INF] Request finished in 53128.4065ms 500 application/json
+2020-02-27 12:04:38.947 +08:00 [INF] User profile is available. Using 'C:\Users\Li\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-02-27 12:04:39.242 +08:00 [INF] Now listening on: https://localhost:5002
+2020-02-27 12:04:39.243 +08:00 [INF] Now listening on: http://localhost:5001
+2020-02-27 12:04:39.244 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-27 12:04:39.245 +08:00 [INF] Hosting environment: Development
+2020-02-27 12:04:39.246 +08:00 [INF] Content root path: C:\Users\Li\source\repos\ProjectApi
+2020-02-27 12:04:46.972 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?pageNumber=1&pageSize=2&_=1582771855462  
+2020-02-27 12:04:46.984 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 12:04:47.001 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 12:04:47.053 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 12:04:47.485 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 12:05:30.377 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 42885.2848ms.
+2020-02-27 12:05:30.384 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 12:05:30.401 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 43343.4982ms
+2020-02-27 12:05:30.404 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 12:05:30.408 +08:00 [INF] Request finished in 43438.7582ms 200 application/json; charset=utf-8
+2020-02-27 12:05:33.823 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?pageNumber=1&pageSize=2&_=1582771855463  
+2020-02-27 12:05:33.824 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 12:05:33.826 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 12:05:33.828 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 12:05:33.843 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 12:05:36.943 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 3099.2133ms.
+2020-02-27 12:05:36.946 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 12:05:36.949 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 3118.4003ms
+2020-02-27 12:05:36.950 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 12:05:36.952 +08:00 [INF] Request finished in 3129.5751ms 200 application/json; charset=utf-8
+2020-02-27 12:06:38.655 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?pageNumber=1&pageSize=2&sortby=name&_=1582771855464  
+2020-02-27 12:06:38.664 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 12:06:38.666 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 12:06:38.667 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 12:06:38.682 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 12:06:38.694 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 9.714ms.
+2020-02-27 12:06:38.696 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 12:06:38.698 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 27.8744ms
+2020-02-27 12:06:38.699 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 12:06:38.700 +08:00 [INF] Request finished in 46.2343ms 200 application/json; charset=utf-8
+2020-02-27 12:07:09.557 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?pageNumber=1&pageSize=2&sortby=name&_=1582771855465  
+2020-02-27 12:07:09.560 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 12:07:09.563 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 12:07:09.565 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 12:07:09.580 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 12:07:09.592 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 10.3442ms.
+2020-02-27 12:07:09.594 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 12:07:09.596 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 28.3207ms
+2020-02-27 12:07:09.598 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 12:07:09.599 +08:00 [INF] Request finished in 43.005ms 200 application/json; charset=utf-8
+2020-02-27 12:07:27.884 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?pageNumber=1&pageSize=2&sortby=name&_=1582771855466  
+2020-02-27 12:07:27.887 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 12:07:27.888 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 12:07:27.890 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 12:07:27.906 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 12:07:45.086 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 17178.966ms.
+2020-02-27 12:07:45.089 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 12:07:45.093 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 17198.9427ms
+2020-02-27 12:07:45.094 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 12:07:45.096 +08:00 [INF] Request finished in 17212.4179ms 200 application/json; charset=utf-8
+2020-02-27 12:09:49.353 +08:00 [INF] User profile is available. Using 'C:\Users\Li\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-02-27 12:09:49.649 +08:00 [INF] Now listening on: https://localhost:5002
+2020-02-27 12:09:49.650 +08:00 [INF] Now listening on: http://localhost:5001
+2020-02-27 12:09:49.651 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-27 12:09:49.652 +08:00 [INF] Hosting environment: Development
+2020-02-27 12:09:49.653 +08:00 [INF] Content root path: C:\Users\Li\source\repos\ProjectApi
+2020-02-27 12:09:53.893 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?pageNumber=1&pageSize=2&sortby=name&_=1582771855467  
+2020-02-27 12:09:53.906 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 12:09:53.922 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 12:09:53.971 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 12:09:54.381 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 12:10:00.912 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 6523.2552ms.
+2020-02-27 12:10:00.918 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 12:10:00.938 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 6961.0476ms
+2020-02-27 12:10:00.940 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 12:10:00.945 +08:00 [INF] Request finished in 7054.5144ms 200 application/json; charset=utf-8
+2020-02-27 12:10:51.266 +08:00 [INF] User profile is available. Using 'C:\Users\Li\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-02-27 12:10:51.552 +08:00 [INF] Now listening on: https://localhost:5002
+2020-02-27 12:10:51.554 +08:00 [INF] Now listening on: http://localhost:5001
+2020-02-27 12:10:51.555 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-27 12:10:51.556 +08:00 [INF] Hosting environment: Development
+2020-02-27 12:10:51.557 +08:00 [INF] Content root path: C:\Users\Li\source\repos\ProjectApi
+2020-02-27 12:10:58.386 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?pageNumber=1&pageSize=2&sortby=name&_=1582771855468  
+2020-02-27 12:10:58.400 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 12:10:58.416 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 12:10:58.466 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 12:10:58.886 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 12:12:03.820 +08:00 [INF] User profile is available. Using 'C:\Users\Li\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-02-27 12:12:04.080 +08:00 [INF] Now listening on: https://localhost:5002
+2020-02-27 12:12:04.081 +08:00 [INF] Now listening on: http://localhost:5001
+2020-02-27 12:12:04.082 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-27 12:12:04.083 +08:00 [INF] Hosting environment: Development
+2020-02-27 12:12:04.084 +08:00 [INF] Content root path: C:\Users\Li\source\repos\ProjectApi
+2020-02-27 12:12:04.418 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?pageNumber=1&pageSize=2&sortby=name&_=1582771855469  
+2020-02-27 12:12:04.431 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 12:12:04.448 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 12:12:04.501 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 12:12:04.927 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 12:12:20.758 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 15823.3641ms.
+2020-02-27 12:12:20.765 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 12:12:20.786 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 16279.6531ms
+2020-02-27 12:12:20.788 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 12:12:20.793 +08:00 [INF] Request finished in 16376.6227ms 200 application/json; charset=utf-8
+2020-02-27 12:14:32.172 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?pageNumber=1&pageSize=2&sortby=Name&_=1582771855470  
+2020-02-27 12:14:32.175 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 12:14:32.183 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 12:14:32.185 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 12:14:32.207 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 12:14:32.221 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 12.3871ms.
+2020-02-27 12:14:32.223 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 12:14:32.225 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 36.7929ms
+2020-02-27 12:14:32.226 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 12:14:32.227 +08:00 [INF] Request finished in 55.0351ms 200 application/json; charset=utf-8
+2020-02-27 12:14:33.959 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?pageNumber=1&pageSize=2&sortby=Name&_=1582771855471  
+2020-02-27 12:14:33.964 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 12:14:33.966 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 12:14:33.967 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 12:14:33.983 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 12:14:33.989 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 4.5096ms.
+2020-02-27 12:14:33.991 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 12:14:33.993 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 22.5028ms
+2020-02-27 12:14:33.994 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 12:14:33.995 +08:00 [INF] Request finished in 36.5586ms 200 application/json; charset=utf-8
+2020-02-27 12:15:02.848 +08:00 [INF] Request starting HTTP/2 GET https://localhost:5002/api/user?pageNumber=2&pageSize=2&sortby=Name&_=1582771855472  
+2020-02-27 12:15:02.850 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-02-27 12:15:02.853 +08:00 [INF] Executing endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 12:15:02.854 +08:00 [INF] Route matched with {action = "Get", controller = "User"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[ProjectApi.Models.PaginatedList`1[ProjectApi.Models.User_Public]]] Get(ProjectApi.Models.PaginationParameters) on controller ProjectApi.Controllers.UserController (ProjectApi).
+2020-02-27 12:15:02.870 +08:00 [INF] Executing action method ProjectApi.Controllers.UserController.Get (ProjectApi) - Validation state: "Valid"
+2020-02-27 12:15:02.881 +08:00 [INF] Executed action method ProjectApi.Controllers.UserController.Get (ProjectApi), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 9.9296ms.
+2020-02-27 12:15:02.883 +08:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ProjectApi.Models.User_Public, ProjectApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2020-02-27 12:15:02.885 +08:00 [INF] Executed action ProjectApi.Controllers.UserController.Get (ProjectApi) in 27.4777ms
+2020-02-27 12:15:02.887 +08:00 [INF] Executed endpoint 'ProjectApi.Controllers.UserController.Get (ProjectApi)'
+2020-02-27 12:15:02.888 +08:00 [INF] Request finished in 40.6563ms 200 application/json; charset=utf-8

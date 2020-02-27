@@ -26,12 +26,12 @@ namespace ProjectApi.Controllers
         {
             var meta = new
             {
-                paginatedList.TotalCount,
+                paginatedList.PaginationParameters.PageSize,
+                paginatedList.PaginationParameters.PageNumber,
                 paginatedList.PageCount,
-                paginatedList.PaginationBase.PageNumber,
-                paginatedList.PaginationBase.PageSize,
-                PrePageLink = paginatedList.HasPre ? CreateUri(parameters, PaginationUriType.PrePage, routeName) : null,
-                NextPageLink = paginatedList.HasNext ? CreateUri(parameters, PaginationUriType.NextPage, routeName) : null
+                paginatedList.TotalCount,
+                PrePageLink = paginatedList.HasPre ? CreateUri(parameters, PaginationUriType.PrePage, routeName) : string.Empty,
+                NextPageLink = paginatedList.HasNext ? CreateUri(parameters, PaginationUriType.NextPage, routeName) : string.Empty
             };
 
             Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(meta, new JsonSerializerSettings
@@ -48,7 +48,7 @@ namespace ProjectApi.Controllers
         /// <param name="type"></param>
         /// <param name="routeName"></param>
         /// <returns></returns>
-        private string CreateUri(PaginationBase parameters, PaginationUriType type, string routeName)
+        private string CreateUri(PaginationParameters parameters, PaginationUriType type, string routeName)
         {
             switch (type)
             {

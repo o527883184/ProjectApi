@@ -7,7 +7,7 @@ namespace ProjectApi.Models
     /// </summary>
     public class PaginatedList<T> : List<T> where T : class
     {
-        public PaginationBase PaginationBase { get; }
+        public PaginationParameters PaginationParameters { get; }
 
         /// <summary>
         /// 数据总数
@@ -16,15 +16,15 @@ namespace ProjectApi.Models
         /// <summary>
         /// 页码总数
         /// </summary>
-        public int PageCount => (int)TotalCount / PaginationBase.PageSize + (TotalCount % PaginationBase.PageSize > 0 ? 1 : 0);
+        public int PageCount { get; set; }
         /// <summary>
         /// 是否有上一页
         /// </summary>
-        public bool HasPre => PaginationBase.PageNumber > 1;
+        public bool HasPre { get; set; }
         /// <summary>
         /// 是否有下一页
         /// </summary>
-        public bool HasNext => PaginationBase.PageNumber < PageCount;
+        public bool HasNext { get; set; }
 
         /// <summary>
         /// 分页数据返回类
@@ -32,22 +32,24 @@ namespace ProjectApi.Models
         public PaginatedList()
         {
         }
-
         /// <summary>
         /// 分页数据返回类
         /// </summary>
-        /// <param name="pageNumber"></param>
-        /// <param name="pageSize"></param>
-        /// <param name="totalCount"></param>
-        /// <param name="data"></param>
+        /// <param name="pageNumber">页码</param>
+        /// <param name="pageSize">页大小</param>
+        /// <param name="totalCount">数据总数</param>
+        /// <param name="data">数据</param>
         public PaginatedList(int pageNumber, int pageSize, long totalCount, List<T> data)
         {
-            PaginationBase = new PaginationBase
+            PaginationParameters = new PaginationParameters
             {
                 PageNumber = pageNumber,
                 PageSize = pageSize
             };
             TotalCount = totalCount;
+            PageCount = (int)TotalCount / PaginationParameters.PageSize + (TotalCount % PaginationParameters.PageSize > 0 ? 1 : 0);
+            HasPre = PaginationParameters.PageNumber > 1;
+            HasNext = PaginationParameters.PageNumber < PageCount;
             AddRange(data);
         }
     }
