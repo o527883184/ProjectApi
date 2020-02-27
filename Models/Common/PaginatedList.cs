@@ -32,6 +32,7 @@ namespace ProjectApi.Models
         public PaginatedList()
         {
         }
+
         /// <summary>
         /// 分页数据返回类
         /// </summary>
@@ -39,17 +40,22 @@ namespace ProjectApi.Models
         /// <param name="pageSize">页大小</param>
         /// <param name="totalCount">数据总数</param>
         /// <param name="data">数据</param>
-        public PaginatedList(int pageNumber, int pageSize, long totalCount, List<T> data)
+        /// <param name="sortField">排序字段</param>
+        /// <param name="isAsc">是否升序</param>
+        public PaginatedList(int pageNumber, int pageSize, long totalCount, List<T> data, string sortField, bool isAsc)
         {
             PaginationParameters = new PaginationParameters
             {
                 PageNumber = pageNumber,
-                PageSize = pageSize
+                PageSize = pageSize,
+                SortBy = sortField,
+                IsAsc = isAsc
             };
             TotalCount = totalCount;
             PageCount = (int)TotalCount / PaginationParameters.PageSize + (TotalCount % PaginationParameters.PageSize > 0 ? 1 : 0);
             HasPre = PaginationParameters.PageNumber > 1;
             HasNext = PaginationParameters.PageNumber < PageCount;
+
             AddRange(data);
         }
     }

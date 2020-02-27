@@ -26,6 +26,11 @@
         }
 
         /// <summary>
+        /// 是否升序
+        /// </summary>
+        public bool IsAsc { get; set; }
+
+        /// <summary>
         /// 默认排序(Id)
         /// </summary>
         private string _sortBy = DefaultsortBy;
@@ -35,7 +40,27 @@
         public string SortBy
         {
             get => _sortBy;
-            set => _sortBy = value ?? DefaultsortBy;
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    _sortBy = DefaultsortBy;
+                }
+                else
+                {
+                    value = value.Trim();
+                    if (value.StartsWith('-'))
+                    {
+                        _sortBy = value.Substring(1);
+                        IsAsc = false;
+                    }
+                    else
+                    {
+                        _sortBy = value;
+                        IsAsc = true;
+                    }
+                }
+            }
         }
     }
 
