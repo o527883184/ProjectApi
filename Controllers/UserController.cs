@@ -26,12 +26,23 @@ namespace ProjectApi.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet(Name = "GetUser")]
-        public async Task<ActionResult<PaginatedList<User_Public>>> Get([FromQuery]PaginationParameters parameters)
+        [HttpGet(Name = nameof(SearchUser))]
+        public async Task<ActionResult<PaginatedList<User_Public>>> SearchUser([FromQuery]PaginationParameters parameters)
         {
             var users = await _userBll.Get(parameters);
             CreateMeta(parameters, "GetUser", users);
             return Ok(_mapper.Map<List<User_Public>>(users));
+        }
+
+        [HttpPost(Name = nameof(CreateUser))]
+        public async Task<ActionResult<int>> CreateUser()
+        {
+            var user = new User_Public
+            {
+                Name = "b"
+            };
+
+            return await _userBll.Create(_mapper.Map<User>(user));
         }
     }
 }

@@ -9,7 +9,7 @@ using ProjectApi.Models;
 namespace ProjectApi.Interfaces
 {
     /// <summary>
-    /// DAL数据访问基本方法封装
+    /// DAL数据访问基本方法接口
     /// </summary>
     public interface IDal<T> where T : class, IEntity
     {
@@ -267,6 +267,5 @@ namespace ProjectApi.Interfaces
         Task<long> GetCountAsync(FilterDefinition<T> filter);
 
         #endregion
-
     }
 }

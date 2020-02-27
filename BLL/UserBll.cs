@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using MongoDB.Driver;
 using ProjectApi.Entitys;
 using ProjectApi.Interfaces;
 using ProjectApi.Models;
@@ -14,6 +13,12 @@ namespace ProjectApi.BLL
         {
             _dal = dal;
         }
+
+        public async Task<int> Create(User user)
+        {
+            return await _dal.CreateAsync(user);
+        }
+
         public async Task<PaginatedList<User>> Get(PaginationParameters parameters)
         {
             if (!string.IsNullOrWhiteSpace(parameters.SortBy))
