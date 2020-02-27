@@ -1,21 +1,16 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Newtonsoft.Json.Serialization;
-using FluentValidation.AspNetCore;
-using Microsoft.AspNetCore.Http;
-using ProjectApi.Data;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Routing;
-using Microsoft.AspNetCore.Mvc.Infrastructure;
-using Microsoft.Extensions.Logging;
-using ProjectApi.Exceptions;
 using System;
 using AutoMapper;
-using ProjectApi.Interfaces;
-using ProjectApi.DAL;
-using ProjectApi.BLL;
+using FluentValidation.AspNetCore;
+using IdentityServer4.AccessTokenValidation;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Newtonsoft.Json.Serialization;
+using ProjectApi.Data;
+using ProjectApi.Extensions;
 
 namespace ProjectApi
 {
@@ -37,6 +32,16 @@ namespace ProjectApi
                 })
                 .AddFluentValidation(); // 模型验证
 
+            // 添加认证服务
+            services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
+                .AddIdentityServerAuthentication(options =>
+                {
+                    options.Authority = "http://localhost:5000";
+                    options.ApiName = "projectapi";
+                    options.RequireHttpsMetadata = false;
+                    options.ApiSecret = "projectapisecret";
+                });
+
             // 注入automapper 数据实体模型映射
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
@@ -47,7 +52,7 @@ namespace ProjectApi
             services.AddHttpsRedirection(option =>
             {
                 option.RedirectStatusCode = StatusCodes.Status307TemporaryRedirect;
-                option.HttpsPort = 5001;
+                option.HttpsPort = 5002;
             });
 
             // 让浏览器直接发起HTTPS请求，将http请求直接转https，跳过服务器端重定向
@@ -60,9 +65,9 @@ namespace ProjectApi
                 options.ExcludedHosts.Add("www.example.com");
             });
 
-            // 注入数据仓储
-            services.AddScoped(typeof(IDal<>), typeof(Dal<>));
-            services.AddScoped<IUserBll, UserBll>();
+            // 注入仓储
+            services.AddBLL();
+            services.AddDAL();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -75,6 +80,10 @@ namespace ProjectApi
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication(); // 认证
+
+            app.UseAuthorization(); // 授权
 
             app.UseEndpoints(endpoints =>
             {

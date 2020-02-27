@@ -9,11 +9,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
-using ProjectApi.BLL;
-using ProjectApi.DAL;
 using ProjectApi.Data;
-using ProjectApi.Exceptions;
-using ProjectApi.Interfaces;
+using ProjectApi.Extensions;
 
 namespace ProjectApi
 {
@@ -35,6 +32,7 @@ namespace ProjectApi
                 })// .ConfigureApiBehaviorOptions()
                 .AddFluentValidation(); // 模型验证
 
+            // 添加认证服务
             services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
                 .AddIdentityServerAuthentication(options =>
                 {
@@ -57,19 +55,9 @@ namespace ProjectApi
                 option.HttpsPort = 5002;
             });
 
-            //services.AddAuthorization();
-
-
-            // 注入数据仓储
-            services.AddScoped(typeof(IDal<>), typeof(Dal<>));
-            services.AddScoped<IUserBll, UserBll>();
-
-            // 生成URI
-            //services.AddScoped<IUrlHelper>(factory =>
-            //{
-            //    var actionContext = factory.GetService<IActionContextAccessor>().ActionContext;
-            //    return new UrlHelper(actionContext);
-            //});
+            // 注入仓储
+            services.AddBLL();
+            services.AddDAL();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -77,13 +65,13 @@ namespace ProjectApi
         {
             app.UseExceptionHandler(loggerFactory);
 
-            app.UseAuthentication();
-
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            app.UseAuthentication(); // 认证
+
+            app.UseAuthorization(); // 授权
 
             app.UseEndpoints(endpoints =>
             {
