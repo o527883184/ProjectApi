@@ -11,7 +11,7 @@ using ProjectApi.Models;
 namespace ProjectApi.Controllers
 {
     [Route("api/user")]
-    //[Authorize]
+    [Authorize]
     [ApiController]
     public class UserController : BaseController
     {
