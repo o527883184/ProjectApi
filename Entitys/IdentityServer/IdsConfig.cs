@@ -13,19 +13,22 @@ namespace ProjectApi.Entitys
         /// <summary>
         /// 授权Uri
         /// </summary>
+        [BsonElement("authority")]
         public string Authority { get; set; }
-
         /// <summary>
         /// 客户端
         /// </summary>
-        public List<IdsClient> Clients { get; set; }
+        [BsonElement("clients")]
+        public List<IdsClient> Clients { get; set; } = new List<IdsClient>();
         /// <summary>
         /// API资源
         /// </summary>
-        public List<IdsApiResource> ApiResources { get; set; }
+        [BsonElement("apiresources")]
+        public List<IdsApiResource> ApiResources { get; set; } = new List<IdsApiResource>();
         /// <summary>
         /// Identity资源
         /// </summary>
-        public List<IdsIdentityResource> IdentityResources { get; set; }
+        [BsonElement("identityresources")]
+        public List<IdsIdentityResource> IdentityResources { get; set; } = new List<IdsIdentityResource>();
     }
 }

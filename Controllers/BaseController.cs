@@ -1,7 +1,12 @@
 ﻿using System;
+using System.Net.Http;
+using System.Threading.Tasks;
+using IdentityModel.Client;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using ProjectApi.Helpers;
@@ -15,6 +20,15 @@ namespace ProjectApi.Controllers
     /// </summary>
     public class BaseController : ControllerBase
     {
+        protected async Task<int> InitUserInfoAsync()
+        {
+            var token = await HttpContext.GetTokenAsync(OpenIdConnectParameterNames.AccessToken);
+            HttpClient client = new HttpClient();
+            client.SetBearerToken(token);
+            var content = await client.GetStringAsync("http://localhost:5000/connect/userinfo");
+            return 1;
+        }
+
         /// <summary>
         /// 返回分页相关信息
         /// </summary>

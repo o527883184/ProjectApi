@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using MongoDB.Bson;
 using ProjectApi.Entitys;
 using ProjectApi.Interfaces;
@@ -30,6 +32,7 @@ namespace ProjectApi.Controllers
         [HttpGet(Name = nameof(Search))]
         public async Task<ActionResult<PaginatedList<User_Public>>> Search([FromQuery]PaginationParameters parameters)
         {
+            await InitUserInfoAsync();
             var users = await _userBll.Get(parameters);
             CreateMeta(parameters, nameof(Search), users);
             return Ok(_mapper.Map<List<User_Public>>(users));

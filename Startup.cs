@@ -11,6 +11,7 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
 using ProjectApi.Data;
 using ProjectApi.Extensions;
+using ProjectApi.Models;
 
 namespace ProjectApi
 {
@@ -19,9 +20,13 @@ namespace ProjectApi
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            IdsConfig = configuration.GetSection("IdsConfig") as IdsConfig;
+            if (IdsConfig == null)
+                throw new Exception("IdsConfig Not Exist!");
         }
 
         public IConfiguration Configuration { get; }
+        public IdsConfig IdsConfig { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
@@ -32,14 +37,16 @@ namespace ProjectApi
                 })
                 .AddFluentValidation(); // 模型验证
 
+            //services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
+
             // 添加认证服务
             services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
                 .AddIdentityServerAuthentication(options =>
                 {
-                    options.Authority = "http://localhost:5000";
-                    options.ApiName = "projectapi";
+                    options.Authority = IdsConfig.Authority;
+                    options.ApiName = IdsConfig.ApiName;
+                    options.ApiSecret = IdsConfig.ApiSecret;
                     options.RequireHttpsMetadata = false;
-                    options.ApiSecret = "projectapisecret";
                 });
 
             // 注入automapper 数据实体模型映射

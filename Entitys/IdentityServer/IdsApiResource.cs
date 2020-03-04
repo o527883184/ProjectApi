@@ -28,7 +28,7 @@ namespace ProjectApi.Entitys
         /// 令牌添加identity用户信息单元信息
         /// </summary>
         [BsonElement("userclaims")]
-        public string UserClaims { get; set; }
+        public List<string> UserClaims { get; set; } = new List<string>();
         /// <summary>
         /// 可访问资源
         /// </summary>
