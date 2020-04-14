@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using IdentityServer4.Models;
 
 namespace ProjectApi.Models
 {
@@ -27,7 +28,7 @@ namespace ProjectApi.Models
         /// <summary>
         /// API资源可访问单元
         /// </summary>
-        public List<string> ClaimTypes { get; set; } = new List<string>();
+        public List<Scope> Scopes { get; set; } = new List<Scope>();
     }
 
     //public class Scope

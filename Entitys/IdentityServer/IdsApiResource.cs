@@ -37,34 +37,30 @@ namespace ProjectApi.Entitys
         public List<Scope> Scopes { get; set; } = new List<Scope>();
     }
 
-    [BsonIgnoreExtraElements]
-    public class Scope
-    {
-        /// <summary>
-        /// 名称
-        /// </summary>
-        [BsonElement("name")]
-        public string Name { get; set; }
-        /// <summary>
-        /// 显示名称
-        /// </summary>
-        [BsonElement("displayname")]
-        public string DisplayName { get; set; }
-        /// <summary>
-        /// API信息单元
-        /// </summary>
-        [BsonElement("claimtypes")]
-        public List<string> ClaimTypes { get; set; } = new List<string>();
+    //[BsonIgnoreExtraElements]
+    //public class Scope
+    //{
+    //    /// <summary>
+    //    /// 名称
+    //    /// </summary>
+    //    [BsonElement("name")]
+    //    public string Name { get; set; }
+    //    /// <summary>
+    //    /// 显示名称
+    //    /// </summary>
+    //    [BsonElement("displayname")]
+    //    public string DisplayName { get; set; }
+    //    /// <summary>
+    //    /// API信息单元
+    //    /// </summary>
+    //    [BsonElement("claimtypes")]
+    //    public List<string> ClaimTypes { get; set; } = new List<string>();
 
-        public Scope()
-        {
-
-        }
-
-        public Scope(string name, string displayName)
-        {
-            Name = name;
-            DisplayName = displayName;
-        }
-    }
+        
+    //    public Scope(string name, string displayName)
+    //    {
+    //        Name = name;
+    //        DisplayName = displayName;
+    //    }
+    //}
 }
