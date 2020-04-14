@@ -35,7 +35,7 @@ namespace ProjectApi.DAL
             return 1;
         }
 
-        public async Task<int> DeleteAsync(ObjectId id) => await DeleteAsync("_id", id);
+        public async Task<int> DeleteAsync(string id) => await DeleteAsync("_id", id);
 
         public async Task<int> DeleteAsync<TField>(string field, TField value) => await DeleteAsync(Builders<T>.Filter.Eq(field, value));
 
@@ -53,7 +53,7 @@ namespace ProjectApi.DAL
             return 1;
         }
 
-        public async Task<T> GetAsync(ObjectId id) => await GetAsync(Builders<T>.Filter.Eq("_id", id));
+        public async Task<T> GetAsync(string id) => await GetAsync(Builders<T>.Filter.Eq("_id", id));
 
         public async Task<T> GetAsync<TField>(string field, TField value) => await GetAsync(Builders<T>.Filter.Eq(field, value));
 
@@ -211,7 +211,7 @@ namespace ProjectApi.DAL
 
         public async Task<int> UpdateAsync(T entity) => await UpdateOneAsync(t => t.Id == entity.Id, null, entity);
 
-        public async Task<int> UpdateAsync<TField>(ObjectId id, Dictionary<string, TField> dict) => await UpdateAsync(t => t.Id == id, dict);
+        public async Task<int> UpdateAsync<TField>(string id, Dictionary<string, TField> dict) => await UpdateAsync(t => t.Id == id, dict);
 
         public async Task<int> UpdateAsync<TField>(Expression<Func<T, bool>> filter, Dictionary<string, TField> dict)
         {
@@ -233,9 +233,9 @@ namespace ProjectApi.DAL
             return await UpdateOneAsync(filter, update);
         }
 
-        public async Task<int> UpdateAsync(ObjectId id, UpdateDefinition<T> update) => await UpdateOneAsync(t => t.Id == id, update);
+        public async Task<int> UpdateAsync(string id, UpdateDefinition<T> update) => await UpdateOneAsync(t => t.Id == id, update);
 
-        public async Task<int> UpdateAsync<TField>(ObjectId id, string field, TField value) => await UpdateOneAsync(t => t.Id == id, Builders<T>.Update.Set(field, value));
+        public async Task<int> UpdateAsync<TField>(string id, string field, TField value) => await UpdateOneAsync(t => t.Id == id, Builders<T>.Update.Set(field, value));
 
         public async Task<int> UpdateAsync(Expression<Func<T, bool>> filter, UpdateDefinition<T> update) => await UpdateOneAsync(filter, update);
 

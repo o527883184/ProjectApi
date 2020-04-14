@@ -54,7 +54,6 @@ namespace ProjectApi.Controllers
         {
             var user = new User
             {
-                Id = ObjectId.Parse("5e57541edef0e61608b06cbb"),
                 Name = "12345"
             };
 

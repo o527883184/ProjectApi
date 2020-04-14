@@ -35,12 +35,12 @@ namespace ProjectApi.BLL
             return await _dal.UpdateAsync(user);
         }
 
-        public async Task<int> Update<TField>(ObjectId id, Dictionary<string, TField> dict)
+        public async Task<int> Update<TField>(string id, Dictionary<string, TField> dict)
         {
             return await _dal.UpdateAsync(id, dict);
         }
 
-        public async Task<int> Update<TField>(ObjectId id, string field, TField value)
+        public async Task<int> Update<TField>(string id, string field, TField value)
         {
             return await _dal.UpdateAsync(id, field, value);
         }

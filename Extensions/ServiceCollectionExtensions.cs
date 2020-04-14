@@ -14,6 +14,7 @@ namespace ProjectApi.Extensions
         public static void AddBLL(this IServiceCollection services)
         {
             services.AddScoped<IUserBll, UserBll>();
+            services.AddScoped<IIdsClientBll, IdsClientBll>();
         }
 
         /// <summary>

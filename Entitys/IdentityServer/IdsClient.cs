@@ -8,7 +8,7 @@ namespace ProjectApi.Entitys
     /// <summary>
     /// IdsClient配置
     /// </summary>
-    public class IdsClient
+    public class IdsClient : Entity
     {
         /// <summary>
         /// 唯一的客户端ID
@@ -35,24 +35,24 @@ namespace ProjectApi.Entitys
 
         /// <summary>
         /// 客户端URI
-        ///// </summary>
-        //[BsonElement("clienturi")]
-        //public string ClientUri { get; set; }
+        /// </summary>
+        [BsonElement("clienturi")]
+        public string ClientUri { get; set; }
         /// <summary>
         /// 授权类型
-        ///// </summary>
-        //[BsonElement("allowedgranttypes")]
-        //public GrantTypes AllowedGrantTypes { get; set; }
+        /// </summary>
+        [BsonElement("allowedgranttypes")]
+        public GrantTypes AllowedGrantTypes { get; set; }
         /// <summary>
         /// 允许离线令牌(用于启用刷新令牌)
-        ///// </summary>
-        //[BsonElement("allowofflineaccess")]
-        //public bool AllowOfflineAccess { get; set; }
+        /// </summary>
+        [BsonElement("allowofflineaccess")]
+        public bool AllowOfflineAccess { get; set; }
         /// <summary>
         /// 令牌类型
-        ///// </summary>
-        //[BsonElement("accesstokentype")]
-        //public AccessTokenType AccessTokenType { get; set; }
+        /// </summary>
+        [BsonElement("accesstokentype")]
+        public AccessTokenType AccessTokenType { get; set; }
         /// <summary>
         /// 令牌失效时间(默认1800秒)
         /// </summary>
@@ -60,14 +60,14 @@ namespace ProjectApi.Entitys
         public int AccessTokenLifetime { get; set; } = 1800;
         /// <summary>
         /// 始终在令牌中包含用户信息单元(token中包含用户信息)
-        ///// </summary>
-        //[BsonElement("alwaysincludeuserclaimsinidtoken")]
-        //public bool AlwaysIncludeUserClaimsInIdToken { get; set; } = false;
+        /// </summary>
+        [BsonElement("alwaysincludeuserclaimsinidtoken")]
+        public bool AlwaysIncludeUserClaimsInIdToken { get; set; } = false;
         /// <summary>
         /// 启用授权同意界面
-        ///// </summary>
-        //[BsonElement("requireconsent")]
-        //public bool RequireConsent { get; set; } = false;
+        /// </summary>
+        [BsonElement("requireconsent")]
+        public bool RequireConsent { get; set; } = false;
         /// <summary>
         /// 授权登录成功跳转(身份或访问令牌发送到的网络位置)
         /// </summary>
@@ -96,8 +96,8 @@ namespace ProjectApi.Entitys
         /// <summary>
         /// 请求认证URI(认证服务器地址)
         /// </summary>
-        [BsonElement("authority")]
-        public string Authority { get; set; }
+        //[BsonElement("authority")]
+        //public string Authority { get; set; }
         //[BsonElement("savetokens")]
         //public bool SaveTokens { get; set; } = true;
         //[BsonElement("getclaimsfromuserinfoendpoint")]
@@ -121,5 +121,8 @@ namespace ProjectApi.Entitys
         //public List<string> RemoveClaim { get; set; } = new List<string>();
 
         #endregion
+
+        [BsonElement("isdelete")]
+        public bool IsDelete { get; set; } = false;
     }
 }

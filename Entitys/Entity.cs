@@ -13,7 +13,7 @@ namespace ProjectApi.Entitys
     {
         [BsonId]
         [BsonElement("_id")]
-        public ObjectId Id { get; set; }
+        public string Id { get; set; }
         [BsonElement("createuserid")]
         public string CreateUserId { get; set; }
         [BsonElement("createusername")]

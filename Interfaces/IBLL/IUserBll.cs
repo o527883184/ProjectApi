@@ -14,8 +14,8 @@ namespace ProjectApi.Interfaces
 
         Task<int> Update(User user);
 
-        Task<int> Update<TField>(ObjectId id, string field, TField value);
+        Task<int> Update<TField>(string id, string field, TField value);
 
-        Task<int> Update<TField>(ObjectId id, Dictionary<string, TField> dict);
+        Task<int> Update<TField>(string id, Dictionary<string, TField> dict);
     }
 }

@@ -28,7 +28,7 @@ namespace ProjectApi.Interfaces
         /// </summary>
         /// <param name="id">主键ID</param>
         /// <returns></returns>
-        Task<int> DeleteAsync(ObjectId id);
+        Task<int> DeleteAsync(string id);
 
         /// <summary>
         /// 删除
@@ -81,7 +81,7 @@ namespace ProjectApi.Interfaces
         /// <param name="field">更新字段名</param>
         /// <param name="value">更新字段值</param>
         /// <returns></returns>
-        Task<int> UpdateAsync<TField>(ObjectId id, string field, TField value);
+        Task<int> UpdateAsync<TField>(string id, string field, TField value);
 
         /// <summary>
         /// 更新
@@ -90,7 +90,7 @@ namespace ProjectApi.Interfaces
         /// <param name="id">主键ID</param>
         /// <param name="dict">更新字段集合</param>
         /// <returns></returns>
-        Task<int> UpdateAsync<TField>(ObjectId id, Dictionary<string, TField> dict);
+        Task<int> UpdateAsync<TField>(string id, Dictionary<string, TField> dict);
 
         /// <summary>
         /// 更新
@@ -98,7 +98,7 @@ namespace ProjectApi.Interfaces
         /// <param name="id">主键ID</param>
         /// <param name="update">更新设置</param>
         /// <returns></returns>
-        Task<int> UpdateAsync(ObjectId id, UpdateDefinition<T> update);
+        Task<int> UpdateAsync(string id, UpdateDefinition<T> update);
 
         /// <summary>
         /// 更新
@@ -142,7 +142,7 @@ namespace ProjectApi.Interfaces
         /// </summary>
         /// <param name="id">主键ID</param>
         /// <returns></returns>
-        Task<T> GetAsync(ObjectId id);
+        Task<T> GetAsync(string id);
 
         /// <summary>
         /// 查询
