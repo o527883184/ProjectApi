@@ -11,6 +11,7 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
 using ProjectApi.Data;
 using ProjectApi.Extensions;
+using ProjectApi.Helpers;
 using ProjectApi.Models;
 
 namespace ProjectApi
@@ -34,8 +35,8 @@ namespace ProjectApi
                 .AddNewtonsoftJson(options =>
                 {
                     options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver(); // 序列化驼峰命名
-                })
-                .AddFluentValidation(); // 模型验证
+                });
+                //.AddFluentValidation(); // 模型验证
 
             //services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
 
@@ -91,6 +92,8 @@ namespace ProjectApi
             app.UseAuthentication(); // 认证
 
             app.UseAuthorization(); // 授权
+
+            app.UseStateAutoMapper(); // 启用automapper helper
 
             app.UseEndpoints(endpoints =>
             {

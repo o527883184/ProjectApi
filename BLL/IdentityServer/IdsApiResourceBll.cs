@@ -4,18 +4,18 @@ using ProjectApi.Interfaces;
 
 namespace ProjectApi.BLL
 {
-    public class IdsClientBll : IIdsClientBll
+    public class IdsApiResourceBll : IIdsApiResourceBll
     {
-        private readonly IDal<IdsClient> _dal;
+        private readonly IDal<IdsApiResource> _dal;
 
-        public IdsClientBll(IDal<IdsClient> dal)
+        public IdsApiResourceBll(IDal<IdsApiResource> dal)
         {
             _dal = dal;
         }
 
-        public async Task<int> Create(IdsClient idsClient)
+        public async Task<int> Create(IdsApiResource idsApiResource)
         {
-            return await _dal.CreateAsync(idsClient);
+            return await _dal.CreateAsync(idsApiResource);
         }
 
         public async Task<int> Delete(string id)

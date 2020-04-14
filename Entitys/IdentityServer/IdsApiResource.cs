@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using IdentityServer4.Models;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace ProjectApi.Entitys
@@ -7,7 +8,7 @@ namespace ProjectApi.Entitys
     /// API资源
     /// </summary>
     [BsonIgnoreExtraElements]
-    public class IdsApiResource
+    public class IdsApiResource : Entity
     {
         /// <summary>
         /// 名称
@@ -22,13 +23,13 @@ namespace ProjectApi.Entitys
         /// <summary>
         /// 密钥
         /// </summary>
-        [BsonElement("apisecret")]
-        public string ApiSecret { get; set; }
+        [BsonElement("apisecrets")]
+        public ICollection<Secret> ApiSecrets { get; set; }
         /// <summary>
         /// 令牌添加identity用户信息单元信息
         /// </summary>
         [BsonElement("userclaims")]
-        public List<string> UserClaims { get; set; } = new List<string>();
+        public ICollection<string> UserClaims { get; set; } = new List<string>();
         /// <summary>
         /// 可访问资源
         /// </summary>
@@ -54,5 +55,16 @@ namespace ProjectApi.Entitys
         /// </summary>
         [BsonElement("claimtypes")]
         public List<string> ClaimTypes { get; set; } = new List<string>();
+
+        public Scope()
+        {
+
+        }
+
+        public Scope(string name, string displayName)
+        {
+            Name = name;
+            DisplayName = displayName;
+        }
     }
 }

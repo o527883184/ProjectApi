@@ -15,6 +15,8 @@ namespace ProjectApi.Extensions
         {
             services.AddScoped<IUserBll, UserBll>();
             services.AddScoped<IIdsClientBll, IdsClientBll>();
+            services.AddScoped<IIdsApiResourceBll, IdsApiResourceBll>();
+
         }
 
         /// <summary>

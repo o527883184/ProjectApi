@@ -1,7 +1,10 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using AutoMapper;
+using IdentityServer4.Models;
 using Microsoft.AspNetCore.Mvc;
 using ProjectApi.Entitys;
+using ProjectApi.Helpers;
 using ProjectApi.Interfaces;
 using ProjectApi.Models;
 
@@ -10,31 +13,29 @@ namespace ProjectApi.Controllers
     /// <summary>
     /// Ids client info
     /// </summary>
-    [Route("api/ids")]
+    [Route("api/idsclient")]
     //[Authorize]
     [ApiController]
     public class IdsClientController : BaseController
     {
         private readonly IIdsClientBll _idsClientBll;
-        /// <summary>
-        /// 数据模型映射
-        /// </summary>
-        private readonly IMapper _mapper;
 
-        public IdsClientController(IIdsClientBll idsClientBll, IMapper mapper)
+        public IdsClientController(IIdsClientBll idsClientBll)
         {
             _idsClientBll = idsClientBll;
-            _mapper = mapper;
         }
 
         /// <summary>
         /// 新增Ids client配置信息
         /// </summary>
         /// <returns></returns>
-        [HttpPost("create", Name = nameof(CreateIdsClientAsync))]
-        public async Task<IActionResult> CreateIdsClientAsync([FromBody]IdsClient_Create create)
+        [HttpPost("create", Name = nameof(CreateIdsClient))]
+        public async Task<IActionResult> CreateIdsClient([FromBody]IdsClient_Create create)
         {
-            await _idsClientBll.Create(_mapper.Map<IdsClient>(create));
+            var entity = create.MapTo<IdsClient>();
+            entity.ClientSecrets = new List<Secret> { new Secret(create.ClientSecret.Sha256()) };
+
+            await _idsClientBll.Create(entity);
             return Ok();
         }
 

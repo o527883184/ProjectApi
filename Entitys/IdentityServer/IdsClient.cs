@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using IdentityServer4.Models;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace ProjectApi.Entitys
@@ -8,6 +7,7 @@ namespace ProjectApi.Entitys
     /// <summary>
     /// IdsClient配置
     /// </summary>
+    [BsonIgnoreExtraElements]
     public class IdsClient : Entity
     {
         /// <summary>
@@ -24,7 +24,7 @@ namespace ProjectApi.Entitys
         /// 客户端密钥
         /// </summary>
         [BsonElement("clientsecrets")]
-        public string ClientSecrets { get; set; }
+        public ICollection<Secret> ClientSecrets { get; set; }
         /// <summary>
         /// 允许客户端访问的资源范围列表
         /// </summary>
